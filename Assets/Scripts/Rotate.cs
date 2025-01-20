@@ -14,6 +14,25 @@ public class Rotate : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb2d;
 
+    private float counter;
+    private float tempRS;
+    private bool canRotate;
+
+    private void Start()
+    {
+        tempRS = -rotationSpeed;
+        counter = 0;
+        canRotate = true;
+
+        if (isTargetRotatingContinuously == false)
+        {
+            rb2d.angularDrag = anglDamping;
+            return;
+        }
+
+        rb2d.angularVelocity = initAngularVel;
+    }
+
     private void Update()
     {
         if (isTargetRotatingContinuously == true)
@@ -28,11 +47,30 @@ public class Rotate : MonoBehaviour
 
     private void RotateContinuously()
     {
-        rb2d.angularVelocity = this.rotationSpeed * 100 * Time.deltaTime;
+        rb2d.angularVelocity = rotationSpeed * 100 * Time.deltaTime;
     }
 
     private void RotateWithBreaks()
     {
+        counter += Time.deltaTime;
+        if (counter > rotationDuration)
+        {
+            canRotate = !canRotate;
 
+            if (canRotate == true)
+            {
+                if (isReverve == true)
+                {
+                    tempRS = -tempRS;
+                }
+            }
+
+            counter = 0;
+        }
+
+        if (canRotate == true)
+        {
+            rb2d.AddTorque(tempRS * 100 * Time.deltaTime);
+        }
     }
 }
