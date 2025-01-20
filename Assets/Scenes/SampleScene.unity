@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59b0fa18db2b444e9c536b802c80fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 300
+  rotationSpeed: 50
   rb2d: {fileID: 647893630}
 --- !u!50 &647893630
 Rigidbody2D:
@@ -312,7 +312,7 @@ MonoBehaviour:
   knifeAngles:
   - 0
   - 180
-  radius: 50
+  radius: 46
 --- !u!1 &827759666
 GameObject:
   m_ObjectHideFlags: 0
