@@ -320,7 +320,7 @@ MonoBehaviour:
   - 180
   goldenAppleAngles:
   - 300
-  radius: 75
+  radius: 92
 --- !u!1 &827759666
 GameObject:
   m_ObjectHideFlags: 0

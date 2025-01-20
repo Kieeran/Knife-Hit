@@ -23,27 +23,7 @@ public class SpawnObjects : MonoBehaviour
     void Start()
     {
         spawnObjects();
-
-        // for (int i = 0; i < knifeAngles.Count; i++)
-        // {
-        //     GameObject knife = Instantiate(knifePrefab, objectHolder);
-
-        //     Vector2 pos = new Vector2(
-        //         (float)(objectHolder.position.x + radius * Math.Cos(degToRad(knifeAngles[i]))),
-        //         (float)(objectHolder.position.y + radius * Math.Sin(degToRad(knifeAngles[i])))
-        //     );
-
-        //     knife.transform.position = pos;
-
-        //     float dx = objectHolder.position.x - knife.transform.position.x;
-        //     float dy = objectHolder.position.y - knife.transform.position.y;
-
-        //     float angleRad = (float)Math.Atan2(-dx, dy);
-
-        //     float angleDeg = (float)(angleRad * (180 / Math.PI));
-
-        //     knife.transform.Rotate(0, 0, angleDeg);
-        // }
+        alignObjects();
     }
 
     private float degToRad(float deg)
@@ -65,17 +45,40 @@ public class SpawnObjects : MonoBehaviour
             GameObject obj = Instantiate(prefabObject, objectHolder);
 
             float tempRadius = this.radius;
-            // if (obj.name.Contains("knife"))
-            // {
-            //     tempRadius -= 60;
-            // }
+            if (obj.name.Contains("Knife"))
+            {
+                tempRadius -= 17;
+            }
 
             Vector2 pos = new Vector2(
                 (float)(objectHolder.position.x + tempRadius * Math.Cos(degToRad(anglesArray[i]))),
-                (float)(objectHolder.position.y + tempRadius * Math.Cos(degToRad(anglesArray[i])))
+                (float)(objectHolder.position.y + tempRadius * Math.Sin(degToRad(anglesArray[i])))
             );
 
             obj.transform.position = pos;
         }
+    }
+
+    private void alignObjects()
+    {
+        foreach (Transform child in objectHolder)
+        {
+            alignObject(child.gameObject);
+        }
+    }
+
+    private void alignObject(GameObject obj)
+    {
+        float dx = objectHolder.position.x - obj.transform.position.x;
+        float dy = objectHolder.position.y - obj.transform.position.y;
+
+        float angleRad = (float)Math.Atan2(dx, -dy);
+        if (obj.name.Contains("Knife"))
+        {
+            angleRad = (float)Math.Atan2(-dx, dy);
+        }
+
+        float angleDeg = (float)(angleRad * (180 / Math.PI));
+        obj.transform.Rotate(0, 0, angleDeg);
     }
 }
