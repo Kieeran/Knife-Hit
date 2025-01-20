@@ -313,10 +313,14 @@ MonoBehaviour:
   goldenApplePrefab: {fileID: 6809792727315396012, guid: 7d5461385753e874292e6d97de192d45, type: 3}
   knifeAngles:
   - 0
+  - 120
+  - 240
+  appleAngles:
+  - 60
   - 180
-  appleAngles: []
-  goldenAppleAngles: []
-  radius: 46
+  goldenAppleAngles:
+  - 300
+  radius: 75
 --- !u!1 &827759666
 GameObject:
   m_ObjectHideFlags: 0
