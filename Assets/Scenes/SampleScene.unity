@@ -309,9 +309,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectHolder: {fileID: 1236186668}
   knifePrefab: {fileID: 8307301101046966738, guid: 112fd098e5fdb0340801ea802a29c788, type: 3}
+  applePrefab: {fileID: 399382728018477771, guid: 91a0bccaa12a6154585358e1da1c971b, type: 3}
+  goldenApplePrefab: {fileID: 6809792727315396012, guid: 7d5461385753e874292e6d97de192d45, type: 3}
   knifeAngles:
   - 0
   - 180
+  appleAngles: []
+  goldenAppleAngles: []
   radius: 46
 --- !u!1 &827759666
 GameObject:

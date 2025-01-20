@@ -8,9 +8,15 @@ public class SpawnObjects : MonoBehaviour
     [SerializeField] private Transform objectHolder;
 
     [SerializeField] private GameObject knifePrefab;
+    [SerializeField] private GameObject applePrefab;
+    [SerializeField] private GameObject goldenApplePrefab;
 
     [Tooltip("The angle is in degrees")]
     [SerializeField] private List<float> knifeAngles;
+    [Tooltip("The angle is in degrees")]
+    [SerializeField] private List<float> appleAngles;
+    [Tooltip("The angle is in degrees")]
+    [SerializeField] private List<float> goldenAppleAngles;
 
     public float radius;
 
