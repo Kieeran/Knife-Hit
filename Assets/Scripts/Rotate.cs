@@ -5,15 +5,11 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
     public float rotationSpeed;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
+    public Rigidbody2D rb2d;
 
-    // Update is called once per frame
     void Update()
     {
-        this.transform.Rotate(0, 0, rotationSpeed * -Time.deltaTime);
+        rb2d.angularVelocity = rotationSpeed;
     }
 }
