@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    public float rotationSpeed;
+    [SerializeField] private bool isTargetRotatingContinuously;
+    [SerializeField] private bool isReverve;
+
+    [SerializeField] private float initAngularVel;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float rotationDuration;
+    [SerializeField] private float anglDamping;
 
     public Rigidbody2D rb2d;
 
