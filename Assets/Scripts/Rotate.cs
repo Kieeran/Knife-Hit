@@ -12,10 +12,27 @@ public class Rotate : MonoBehaviour
     [SerializeField] private float rotationDuration;
     [SerializeField] private float anglDamping;
 
-    public Rigidbody2D rb2d;
+    [SerializeField] private Rigidbody2D rb2d;
 
-    void Update()
+    private void Update()
     {
-        rb2d.angularVelocity = rotationSpeed;
+        if (isTargetRotatingContinuously == true)
+        {
+            RotateContinuously();
+        }
+        else
+        {
+            RotateWithBreaks();
+        }
+    }
+
+    private void RotateContinuously()
+    {
+        rb2d.angularVelocity = this.rotationSpeed * 100 * Time.deltaTime;
+    }
+
+    private void RotateWithBreaks()
+    {
+
     }
 }

@@ -266,7 +266,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59b0fa18db2b444e9c536b802c80fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  isTargetRotatingContinuously: 1
+  isReverve: 0
+  initAngularVel: 0
+  rotationSpeed: 100
+  rotationDuration: 0
+  anglDamping: 0
   rb2d: {fileID: 647893630}
 --- !u!50 &647893630
 Rigidbody2D:
