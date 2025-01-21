@@ -20,7 +20,7 @@ public class ThrowKnife : MonoBehaviour
     {
         currentKnife = Instantiate(knifePrefab, transform);
 
-        currentKnife.GetComponent<Collider2D>().isTrigger = true;
+        currentKnife.GetComponent<Collider2D>().enabled = false;
     }
 
     private void Update()
@@ -29,15 +29,12 @@ public class ThrowKnife : MonoBehaviour
 
         if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Touch the screen");
+            // Debug.Log("Touch the screen");
 
             Rigidbody2D rigidbody2D = currentKnife.GetComponent<Rigidbody2D>();
-
-            // rigidbody2D.gravityScale = 0;
-
             rigidbody2D.AddForce(Vector2.up * force * Time.deltaTime, ForceMode2D.Impulse);
 
-            currentKnife.GetComponent<Collider2D>().isTrigger = false;
+            currentKnife.GetComponent<Collider2D>().enabled = true;
 
             Destroy(currentKnife, 1f);
 
