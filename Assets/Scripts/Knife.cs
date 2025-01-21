@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Knife : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collider2D)
-    {
-        Debug.Log("Collide with " + collider2D.gameObject.name + " as trigger");
+    // private void OnTriggerEnter2D(Collider2D collider2D)
+    // {
+    //     Debug.Log("Collide with " + collider2D.gameObject.name + " as trigger");
 
-        Destroy(transform.GetComponent<Rigidbody2D>());
-    }
+    //     Destroy(transform.GetComponent<Rigidbody2D>());
+    // }
 }

@@ -469,9 +469,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582d05da9ed0e7e4ba39ac98210e34e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectHolder: {fileID: 0}
   knifePrefab: {fileID: 8307301101046966738, guid: 112fd098e5fdb0340801ea802a29c788, type: 3}
   force: 0
   touchCoolDown: 0
+  holder: {fileID: 0}
 --- !u!1 &647893627
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +648,9 @@ MonoBehaviour:
   knifePrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
   applePrefab: {fileID: 2914236395485557045, guid: 9e80c0c7f1005504e9c201a6534cfb4a, type: 3}
   goldenApplePrefab: {fileID: 4853229999956769632, guid: 7d5461385753e874292e6d97de192d45, type: 3}
-  knifeAngles: []
+  knifeAngles:
+  - 0
+  - 180
   appleAngles: []
   goldenAppleAngles: []
   radius: 1.75
@@ -1116,9 +1120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582d05da9ed0e7e4ba39ac98210e34e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectHolder: {fileID: 26263668}
   knifePrefab: {fileID: 4823279516184705763, guid: 63e2737585572ec4ea0e7021ecc666b1, type: 3}
   force: 2000
   touchCoolDown: 0.2
+  holder: {fileID: 684706912}
 --- !u!4 &1831928318
 Transform:
   m_ObjectHideFlags: 0

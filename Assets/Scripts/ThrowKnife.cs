@@ -6,7 +6,9 @@ using UnityEngine.Events;
 
 public class ThrowKnife : MonoBehaviour
 {
+    [SerializeField] private Transform objectHolder;
     [SerializeField] private GameObject knifePrefab;
+    [SerializeField] private GameObject knifeSpawnPrefab;
     [SerializeField] private float force;
     [SerializeField] private float touchCoolDown;
     [SerializeField] private Transform holder;
@@ -45,24 +47,30 @@ public class ThrowKnife : MonoBehaviour
 
     private void Update()
     {
-        FindDesPoint();
-
-        if (canTouch == false) return;
-
-        if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
+        if (canTouch == true)
         {
-            Rigidbody2D rigidbody2D = currentKnife.GetComponent<Rigidbody2D>();
-            rigidbody2D.AddForce(Vector2.up * force * Time.deltaTime, ForceMode2D.Impulse);
+            if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
+            {
+                Rigidbody2D rigidbody2D = currentKnife.GetComponent<Rigidbody2D>();
+                rigidbody2D.AddForce(Vector2.up * force * Time.deltaTime, ForceMode2D.Impulse);
 
-            currentKnife.GetComponent<Collider2D>().enabled = true;
+                currentKnife.GetComponent<Collider2D>().enabled = true;
 
-            Destroy(currentKnife, 1f);
+                canTouch = false;
+            }
+        }
 
-            CreateNewKnife();
+        float distance = Vector2.Distance(currentKnife.transform.position, desPoint);
 
-            canTouch = false;
+        if (distance > 0 && distance <= 1f)
+        {
+            currentKnife.transform.position = desPoint;
+            currentKnife.gameObject.SetActive(false);
 
-            StartCoroutine(TurnOnCanTouch());
+            GameObject knife = Instantiate(knifeSpawnPrefab, objectHolder);
+
+            knife.transform.position = currentKnife.transform.position;
+            knife.transform.rotation = currentKnife.transform.rotation;
         }
     }
 
