@@ -131,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 26263668}
+  - component: {fileID: 26263669}
   m_Layer: 0
   m_Name: ObjectHolder
   m_TagString: Untagged
@@ -153,6 +154,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 684706912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &26263669
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26263667}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &222191741
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +192,7 @@ GameObject:
   - component: {fileID: 222191742}
   - component: {fileID: 222191743}
   - component: {fileID: 222191744}
+  - component: {fileID: 222191745}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -267,12 +296,39 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.85
+--- !u!50 &222191745
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222191741}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +647,7 @@ MonoBehaviour:
   goldenApplePrefab: {fileID: 4853229999956769632, guid: 7d5461385753e874292e6d97de192d45, type: 3}
   knifeAngles:
   - 0
-  - 180
+  - 90
   appleAngles: []
   goldenAppleAngles: []
   radius: 1.75
@@ -610,7 +666,7 @@ MonoBehaviour:
   isTargetRotatingContinuously: 0
   isReverve: 1
   initAngularVel: 0
-  rotationSpeed: 6
+  rotationSpeed: 3
   rotationDuration: 4
   anglDamping: 1
   rb2d: {fileID: 684706909}
@@ -1062,7 +1118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knifePrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
-  force: 2500
+  force: 2000
 --- !u!4 &1831928318
 Transform:
   m_ObjectHideFlags: 0

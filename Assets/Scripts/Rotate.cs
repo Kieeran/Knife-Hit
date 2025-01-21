@@ -70,7 +70,7 @@ public class Rotate : MonoBehaviour
 
         if (canRotate == true)
         {
-            rb2d.AddTorque(tempRS * 10);
+            rb2d.AddTorque(tempRS);
         }
     }
 }

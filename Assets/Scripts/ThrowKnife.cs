@@ -17,6 +17,8 @@ public class ThrowKnife : MonoBehaviour
     private void CreateNewKnife()
     {
         currentKnife = Instantiate(knifePrefab, transform);
+
+        currentKnife.GetComponent<Collider2D>().isTrigger = true;
     }
 
     private void Update()
@@ -30,6 +32,8 @@ public class ThrowKnife : MonoBehaviour
             rigidbody2D.gravityScale = 0;
 
             rigidbody2D.AddForce(Vector2.up * force * Time.deltaTime, ForceMode2D.Impulse);
+
+            currentKnife.GetComponent<Collider2D>().isTrigger = false;
 
             Destroy(currentKnife, 1f);
 
