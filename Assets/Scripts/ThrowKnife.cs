@@ -29,8 +29,6 @@ public class ThrowKnife : MonoBehaviour
 
         if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
         {
-            // Debug.Log("Touch the screen");
-
             Rigidbody2D rigidbody2D = currentKnife.GetComponent<Rigidbody2D>();
             rigidbody2D.AddForce(Vector2.up * force * Time.deltaTime, ForceMode2D.Impulse);
 
