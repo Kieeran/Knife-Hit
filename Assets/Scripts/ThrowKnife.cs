@@ -25,7 +25,7 @@ public class ThrowKnife : MonoBehaviour
 
     private void FindDesPoint()
     {
-        float radius = holder.GetComponent<SpawnObjects>().GetRadius();
+        float radius = holder.GetComponent<SpawnObjects>().GetKnifeRadius();
         Vector2 ToTarget = new Vector2();
         ToTarget.x = holder.position.x - transform.position.x;
         ToTarget.y = holder.position.y - transform.position.y;

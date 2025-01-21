@@ -558,10 +558,14 @@ MonoBehaviour:
   knifePrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
   applePrefab: {fileID: 2914236395485557045, guid: 9e80c0c7f1005504e9c201a6534cfb4a, type: 3}
   goldenApplePrefab: {fileID: 4853229999956769632, guid: 7d5461385753e874292e6d97de192d45, type: 3}
-  knifeAngles: []
-  appleAngles: []
-  goldenAppleAngles: []
-  radius: 1.75
+  knifeAngles:
+  - 0
+  appleAngles:
+  - 90
+  goldenAppleAngles:
+  - 180
+  appleRadius: 1.75
+  knifeRadius: 1.4
 --- !u!114 &684706911
 MonoBehaviour:
   m_ObjectHideFlags: 0

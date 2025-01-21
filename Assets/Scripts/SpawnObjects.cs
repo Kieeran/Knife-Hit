@@ -18,9 +18,10 @@ public class SpawnObjects : MonoBehaviour
     [Tooltip("The angle is in degrees")]
     [SerializeField] private List<float> goldenAppleAngles;
 
-    [SerializeField] private float radius;
+    [SerializeField] private float appleRadius;
+    [SerializeField] private float knifeRadius;
 
-    public float GetRadius() { return radius; }
+    public float GetKnifeRadius() { return knifeRadius; }
 
     void Start()
     {
@@ -51,10 +52,10 @@ public class SpawnObjects : MonoBehaviour
 
     private void ArrangeObject(GameObject obj, float angle)
     {
-        float tempRadius = radius;
+        float tempRadius = appleRadius;
         if (obj.name.Contains("Knife"))
         {
-            tempRadius -= 0.35f;
+            tempRadius = knifeRadius;
         }
 
         Vector2 pos = new Vector2(
