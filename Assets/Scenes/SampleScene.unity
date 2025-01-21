@@ -471,6 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectHolder: {fileID: 0}
   knifePrefab: {fileID: 8307301101046966738, guid: 112fd098e5fdb0340801ea802a29c788, type: 3}
+  knifeSpawnPrefab: {fileID: 0}
   force: 0
   touchCoolDown: 0
   holder: {fileID: 0}
@@ -648,9 +649,7 @@ MonoBehaviour:
   knifePrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
   applePrefab: {fileID: 2914236395485557045, guid: 9e80c0c7f1005504e9c201a6534cfb4a, type: 3}
   goldenApplePrefab: {fileID: 4853229999956769632, guid: 7d5461385753e874292e6d97de192d45, type: 3}
-  knifeAngles:
-  - 0
-  - 180
+  knifeAngles: []
   appleAngles: []
   goldenAppleAngles: []
   radius: 1.75
@@ -669,7 +668,7 @@ MonoBehaviour:
   isTargetRotatingContinuously: 1
   isReverve: 0
   initAngularVel: 0
-  rotationSpeed: 3
+  rotationSpeed: 1.5
   rotationDuration: 4
   anglDamping: 1
   rb2d: {fileID: 684706909}
@@ -1122,7 +1121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectHolder: {fileID: 26263668}
   knifePrefab: {fileID: 4823279516184705763, guid: 63e2737585572ec4ea0e7021ecc666b1, type: 3}
-  force: 2000
+  knifeSpawnPrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
+  force: 50
   touchCoolDown: 0.2
   holder: {fileID: 684706912}
 --- !u!4 &1831928318

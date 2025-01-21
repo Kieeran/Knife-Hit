@@ -52,7 +52,7 @@ public class ThrowKnife : MonoBehaviour
             if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
             {
                 Rigidbody2D rigidbody2D = currentKnife.GetComponent<Rigidbody2D>();
-                rigidbody2D.AddForce(Vector2.up * force * Time.deltaTime, ForceMode2D.Impulse);
+                rigidbody2D.AddForce(Vector2.up * force, ForceMode2D.Impulse);
 
                 currentKnife.GetComponent<Collider2D>().enabled = true;
 
@@ -71,6 +71,10 @@ public class ThrowKnife : MonoBehaviour
 
             knife.transform.position = currentKnife.transform.position;
             knife.transform.rotation = currentKnife.transform.rotation;
+
+            Destroy(currentKnife);
+            CreateNewKnife();
+            canTouch = true;
         }
     }
 
