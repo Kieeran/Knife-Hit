@@ -471,6 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knifePrefab: {fileID: 8307301101046966738, guid: 112fd098e5fdb0340801ea802a29c788, type: 3}
   force: 0
+  touchCoolDown: 0
 --- !u!1 &647893627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knifePrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
   force: 2000
+  touchCoolDown: 0.2
 --- !u!4 &1831928318
 Transform:
   m_ObjectHideFlags: 0
