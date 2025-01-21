@@ -43,20 +43,24 @@ public class SpawnObjects : MonoBehaviour
         for (int i = 0; i < anglesArray.Count; i++)
         {
             GameObject obj = Instantiate(prefabObject, objectHolder);
-
-            float tempRadius = this.radius;
-            if (obj.name.Contains("Knife"))
-            {
-                tempRadius -= 0.35f;
-            }
-
-            Vector2 pos = new Vector2(
-                (float)(objectHolder.position.x + tempRadius * Math.Cos(degToRad(anglesArray[i]))),
-                (float)(objectHolder.position.y + tempRadius * Math.Sin(degToRad(anglesArray[i])))
-            );
-
-            obj.transform.position = pos;
+            ArrangeObject(obj, anglesArray[i]);
         }
+    }
+
+    private void ArrangeObject(GameObject obj, float angle)
+    {
+        float tempRadius = radius;
+        if (obj.name.Contains("Knife"))
+        {
+            tempRadius -= 0.35f;
+        }
+
+        Vector2 pos = new Vector2(
+            (float)(objectHolder.position.x + tempRadius * Math.Cos(degToRad(angle))),
+            (float)(objectHolder.position.y + tempRadius * Math.Sin(degToRad(angle)))
+        );
+
+        obj.transform.position = pos;
     }
 
     private void alignObjects()
