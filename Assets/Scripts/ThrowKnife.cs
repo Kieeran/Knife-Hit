@@ -31,9 +31,9 @@ public class ThrowKnife : MonoBehaviour
         {
             Debug.Log("Touch the screen");
 
-            Rigidbody2D rigidbody2D = currentKnife.AddComponent<Rigidbody2D>();
+            Rigidbody2D rigidbody2D = currentKnife.GetComponent<Rigidbody2D>();
 
-            rigidbody2D.gravityScale = 0;
+            // rigidbody2D.gravityScale = 0;
 
             rigidbody2D.AddForce(Vector2.up * force * Time.deltaTime, ForceMode2D.Impulse);
 
