@@ -47,7 +47,7 @@ public class SpawnObjects : MonoBehaviour
             float tempRadius = this.radius;
             if (obj.name.Contains("Knife"))
             {
-                tempRadius -= 13;
+                tempRadius -= 15;
             }
 
             Vector2 pos = new Vector2(
