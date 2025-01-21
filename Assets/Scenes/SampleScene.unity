@@ -414,6 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knifePrefab: {fileID: 8307301101046966738, guid: 112fd098e5fdb0340801ea802a29c788, type: 3}
+  force: 0
 --- !u!1 &647893627
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,13 +591,9 @@ MonoBehaviour:
   goldenApplePrefab: {fileID: 4853229999956769632, guid: 7d5461385753e874292e6d97de192d45, type: 3}
   knifeAngles:
   - 0
-  - 120
-  - 240
-  appleAngles:
-  - 60
   - 180
-  goldenAppleAngles:
-  - 300
+  appleAngles: []
+  goldenAppleAngles: []
   radius: 1.75
 --- !u!114 &684706911
 MonoBehaviour:
@@ -1035,6 +1032,52 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 200
+--- !u!1 &1831928316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1831928318}
+  - component: {fileID: 1831928317}
+  m_Layer: 0
+  m_Name: KnifeHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1831928317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831928316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582d05da9ed0e7e4ba39ac98210e34e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knifePrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
+  force: 2500
+--- !u!4 &1831928318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831928316}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -4.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1044,3 +1087,4 @@ SceneRoots:
   - {fileID: 827759669}
   - {fileID: 1130486571}
   - {fileID: 684706912}
+  - {fileID: 1831928318}
