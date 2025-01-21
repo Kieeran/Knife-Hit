@@ -47,7 +47,7 @@ public class Rotate : MonoBehaviour
 
     private void RotateContinuously()
     {
-        rb2d.angularVelocity = rotationSpeed * 100 * Time.deltaTime;
+        rb2d.angularVelocity = tempRS * 100;
     }
 
     private void RotateWithBreaks()
@@ -70,7 +70,7 @@ public class Rotate : MonoBehaviour
 
         if (canRotate == true)
         {
-            rb2d.AddTorque(tempRS * 100 * Time.deltaTime);
+            rb2d.AddTorque(tempRS * 10);
         }
     }
 }
