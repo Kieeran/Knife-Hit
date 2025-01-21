@@ -60,6 +60,8 @@ public class ThrowKnife : MonoBehaviour
             }
         }
 
+        if (currentKnife == null) return;
+
         float distance = Vector2.Distance(currentKnife.transform.position, desPoint);
 
         if (distance > 0 && distance <= 1f)

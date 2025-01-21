@@ -668,9 +668,9 @@ MonoBehaviour:
   isTargetRotatingContinuously: 1
   isReverve: 0
   initAngularVel: 0
-  rotationSpeed: 1.5
-  rotationDuration: 4
-  anglDamping: 1
+  rotationSpeed: 1
+  rotationDuration: 0
+  anglDamping: 0
   rb2d: {fileID: 684706909}
 --- !u!4 &684706912
 Transform:
