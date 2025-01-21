@@ -18,7 +18,9 @@ public class SpawnObjects : MonoBehaviour
     [Tooltip("The angle is in degrees")]
     [SerializeField] private List<float> goldenAppleAngles;
 
-    public float radius;
+    [SerializeField] private float radius;
+
+    public float GetRadius() { return radius; }
 
     void Start()
     {
