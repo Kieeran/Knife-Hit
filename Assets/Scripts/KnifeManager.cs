@@ -23,7 +23,6 @@ public class KnifeManager : MonoBehaviour
     [SerializeField] private GameObject throwKnifePrefab;
     private int amount;
 
-
     [SerializeField] private List<KnifeConfig> knifeConfigs;
 
     private void Start()
