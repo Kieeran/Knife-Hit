@@ -6,6 +6,7 @@ public class Rotate : MonoBehaviour
 {
     [SerializeField] private bool isTargetRotatingContinuously;
     [SerializeField] private bool isReverve;
+    [SerializeField] private bool isCounterClockwise;
 
     [SerializeField] private float initAngularVel;
     [SerializeField] private float rotationSpeed;
@@ -23,6 +24,11 @@ public class Rotate : MonoBehaviour
         tempRS = -rotationSpeed;
         counter = 0;
         canRotate = true;
+
+        if (isCounterClockwise == true)
+        {
+            tempRS = -tempRS;
+        }
 
         if (isTargetRotatingContinuously == false)
         {

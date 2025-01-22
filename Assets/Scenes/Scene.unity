@@ -1622,10 +1622,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTargetRotatingContinuously: 0
   isReverve: 0
+  isCounterClockwise: 0
   initAngularVel: 3
-  rotationSpeed: 3
-  rotationDuration: 2.5
-  anglDamping: 1
+  rotationSpeed: 7
+  rotationDuration: 2
+  anglDamping: 2
   rb2d: {fileID: 684706909}
 --- !u!4 &684706912
 Transform:
