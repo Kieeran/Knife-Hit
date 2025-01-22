@@ -14,9 +14,9 @@ public class ThrowKnife : MonoBehaviour
 
     private Vector2 desPoint;
     private GameObject currentKnife;
-    private int currentKnifeAmount = 0;
+    private int knifeAmount = 0;
 
-    public void SetCurrentKnifeAmount(int amount) { currentKnifeAmount = amount; }
+    public void SetKnifeAmount(int amount) { knifeAmount = amount; }
     private void Start()
     {
         CreateNewKnife();
@@ -50,6 +50,8 @@ public class ThrowKnife : MonoBehaviour
 
     private void Update()
     {
+        if (knifeAmount <= 0) return;
+
         if (canTouch == true)
         {
             if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
@@ -80,6 +82,12 @@ public class ThrowKnife : MonoBehaviour
             Destroy(currentKnife);
             CreateNewKnife();
             canTouch = true;
+
+            knifeAmount--;
+            if (knifeAmount == 0)
+            {
+                GameManager.Instance.Win();
+            }
         }
     }
 

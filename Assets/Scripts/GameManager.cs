@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
         Holder.GetComponent<SpawnObjects>().ResetSpawnObjects(stageConfig);
         Holder.GetComponent<Rotate>().ResetRotate(targetConfig);
+        KnifeHolder.GetComponent<ThrowKnife>().SetKnifeAmount(stageConfig.throwKnifeAmount);
     }
 
     // Update is called once per frame
@@ -47,6 +48,12 @@ public class GameManager : MonoBehaviour
 
             Holder.GetComponent<SpawnObjects>().ResetSpawnObjects(stageConfig);
             Holder.GetComponent<Rotate>().ResetRotate(targetConfig);
+            KnifeHolder.GetComponent<ThrowKnife>().SetKnifeAmount(stageConfig.throwKnifeAmount);
         }
+    }
+
+    public void Win()
+    {
+        Debug.Log("You win!!!");
     }
 }
