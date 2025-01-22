@@ -1620,12 +1620,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59b0fa18db2b444e9c536b802c80fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTargetRotatingContinuously: 1
+  isTargetRotatingContinuously: 0
   isReverve: 0
-  initAngularVel: 0
-  rotationSpeed: 1
-  rotationDuration: 0
-  anglDamping: 0
+  initAngularVel: 3
+  rotationSpeed: 3
+  rotationDuration: 2.5
+  anglDamping: 1
   rb2d: {fileID: 684706909}
 --- !u!4 &684706912
 Transform:
@@ -3185,6 +3185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba2174e6e8237a45b0d84c514c55369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnKnifePrefab: {fileID: 0}
+  throwKnifePrefab: {fileID: 0}
+  knifeConfigs: []
 --- !u!1 &1562386492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3897,7 +3900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.8, y: -11.1}
+  m_AnchoredPosition: {x: -14.800003, y: -11.099998}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1827182682
