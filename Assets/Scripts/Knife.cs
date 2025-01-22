@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class Knife : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    public void SetSprite(Sprite sprite)
+    {
+        spriteRenderer.sprite = sprite;
+    }
 
     private void OnTriggerEnter2D(Collider2D collider2D)
     {

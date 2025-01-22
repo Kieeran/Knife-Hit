@@ -82,8 +82,29 @@ public class KnifeManager : MonoBehaviour
         return knife;
     }
 
-    public void GetThrowKnifeByID(int id)
+    public GameObject GetThrowKnifeByID(int id)
     {
+        if (id > knifeConfigs.Length - 1)
+        {
+            Debug.Log("Unvalid ID");
+            return null;
+        }
 
+        if (throwKnives.Count <= 0)
+        {
+            CreateThrowKnives(amount);
+            Debug.Log("Create more throw knife");
+        }
+
+        GameObject knife = throwKnives.Dequeue();
+
+        knife.gameObject.SetActive(true);
+        Knife _knife;
+        if (TryGetComponent<Knife>(out _knife))
+        {
+            _knife.SetSprite(knifeConfigs[id].knifeSkin);
+        }
+        
+        return knife;
     }
 }
