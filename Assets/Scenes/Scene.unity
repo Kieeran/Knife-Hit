@@ -434,6 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c7c03c5bfb0a94ea3d39197c35ae97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Holder: {fileID: 684706912}
+  KnifeHolder: {fileID: 1831928318}
 --- !u!1 &134089840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,8 +4091,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectHolder: {fileID: 26263668}
-  knifePrefab: {fileID: 4823279516184705763, guid: 63e2737585572ec4ea0e7021ecc666b1, type: 3}
-  knifeSpawnPrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
   force: 50
   touchCoolDown: 0.2
   holder: {fileID: 684706912}
