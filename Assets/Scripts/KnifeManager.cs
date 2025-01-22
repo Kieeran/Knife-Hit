@@ -80,6 +80,15 @@ public class KnifeManager : MonoBehaviour
         return knife;
     }
 
+    public void ReturnSpawnKnife(GameObject knife)
+    {
+        knife.transform.SetParent(transform);
+        knife.transform.SetLocalPositionAndRotation(Vector2.zero, Quaternion.identity);
+        knife.SetActive(false);
+
+        spawnKnives.Enqueue(knife);
+    }
+
     public GameObject GetThrowKnifeByID(int id)
     {
         if (id > knifeConfigs.Length - 1)

@@ -79,6 +79,15 @@ public class AppleManager : MonoBehaviour
         return apple;
     }
 
+    public void ReturnApple(GameObject apple)
+    {
+        apple.transform.SetParent(transform);
+        apple.transform.SetLocalPositionAndRotation(Vector2.zero, Quaternion.identity);
+        apple.SetActive(false);
+
+        apples.Enqueue(apple);
+    }
+
     public GameObject GetGoldenApple()
     {
         if (goldenApples.Count <= 0)
@@ -91,5 +100,14 @@ public class AppleManager : MonoBehaviour
         apple.SetActive(true);
 
         return apple;
+    }
+
+    public void ReturnGoldenApple(GameObject apple)
+    {
+        apple.transform.SetParent(transform);
+        apple.transform.SetLocalPositionAndRotation(Vector2.zero, Quaternion.identity);
+        apple.SetActive(false);
+
+        goldenApples.Enqueue(apple);
     }
 }
