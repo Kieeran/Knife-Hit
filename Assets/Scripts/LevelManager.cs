@@ -33,6 +33,8 @@ public class LevelManager : MonoBehaviour
         LoadConfigs();
     }
 
+    public List<LevelData> GetLevelDatas() { return levelDatas; }
+
     private void LoadConfigs()
     {
         levelDatas = new List<LevelData>();
