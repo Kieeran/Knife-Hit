@@ -24,6 +24,6 @@ MonoBehaviour:
   - 210
   - 240
   - 300
+  <goldenAppleAngles>k__BackingField:
   - 330
-  <goldenAppleAngles>k__BackingField: []
   <targetSkin>k__BackingField: {fileID: 21300000, guid: b2e8b250b61ac904197c68337d3300ec, type: 3}

@@ -7,9 +7,6 @@ public class SpawnObjects : MonoBehaviour
 {
     [SerializeField] private Transform objectHolder;
 
-    [SerializeField] private GameObject applePrefab;
-    [SerializeField] private GameObject goldenApplePrefab;
-
     [SerializeField] private float appleRadius;
     [SerializeField] private float knifeRadius;
 
@@ -48,25 +45,40 @@ public class SpawnObjects : MonoBehaviour
     {
         for (int i = 0; i < knifeAngles.Count; i++)
         {
-            //GameObject obj = Instantiate(prefabObject, objectHolder);
             GameObject obj = KnifeManager.Instance.GetSpawnKnife();
             obj.transform.SetParent(objectHolder);
 
             ArrangeObject(obj, knifeAngles[i]);
         }
 
-        this.spawnObject(appleAngles, applePrefab);
-        this.spawnObject(goldenAppleAngles, goldenApplePrefab);
+        for (int i = 0; i < appleAngles.Count; i++)
+        {
+            GameObject obj = AppleManager.Instance.GetApple();
+            obj.transform.SetParent(objectHolder);
+
+            ArrangeObject(obj, appleAngles[i]);
+        }
+
+        for (int i = 0; i < goldenAppleAngles.Count; i++)
+        {
+            GameObject obj = AppleManager.Instance.GetGoldenApple();
+            obj.transform.SetParent(objectHolder);
+
+            ArrangeObject(obj, goldenAppleAngles[i]);
+        }
+
+        // this.spawnObject(appleAngles);
+        // this.spawnObject(goldenAppleAngles);
     }
 
-    private void spawnObject(List<float> anglesArray, GameObject prefabObject)
-    {
-        for (int i = 0; i < anglesArray.Count; i++)
-        {
-            GameObject obj = Instantiate(prefabObject, objectHolder);
-            ArrangeObject(obj, anglesArray[i]);
-        }
-    }
+    // private void spawnObject(List<float> anglesArray)
+    // {
+    //     for (int i = 0; i < anglesArray.Count; i++)
+    //     {
+    //         GameObject obj = Instantiate(prefabObject, objectHolder);
+    //         ArrangeObject(obj, anglesArray[i]);
+    //     }
+    // }
 
     private void ArrangeObject(GameObject obj, float angle)
     {
