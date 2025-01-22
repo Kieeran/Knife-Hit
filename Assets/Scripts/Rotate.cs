@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    [SerializeField] private bool isTargetRotatingContinuously;
-    [SerializeField] private bool isReverve;
-    [SerializeField] private bool isCounterClockwise;
-
-    [SerializeField] private float initAngularVel;
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] private float rotationDuration;
-    [SerializeField] private float anglDamping;
-
+    [SerializeField] private TargetConfig targetConfig;
     [SerializeField] private Rigidbody2D rb2d;
+    private bool isTargetRotatingContinuously;
+    private bool isReverve;
+    private bool isCounterClockwise;
+
+    private float initAngularVel;
+    private float rotationSpeed;
+    private float rotationDuration;
+    private float anglDamping;
 
     private float counter;
     private float tempRS;
@@ -21,6 +21,8 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
+        LoadConfig();
+
         tempRS = -rotationSpeed;
         counter = 0;
         canRotate = true;
@@ -37,6 +39,18 @@ public class Rotate : MonoBehaviour
         }
 
         rb2d.angularVelocity = initAngularVel;
+    }
+
+    private void LoadConfig()
+    {
+        isTargetRotatingContinuously = targetConfig.isTargetRotatingContinuously;
+        isReverve = targetConfig.isReverve;
+        isCounterClockwise = targetConfig.isCounterClockwise;
+
+        initAngularVel = targetConfig.initAngularVel;
+        rotationSpeed = targetConfig.rotationSpeed;
+        rotationDuration = targetConfig.rotationDuration;
+        anglDamping = targetConfig.anglDamping;
     }
 
     private void Update()

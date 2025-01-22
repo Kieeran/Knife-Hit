@@ -1600,15 +1600,10 @@ MonoBehaviour:
   knifePrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
   applePrefab: {fileID: 2914236395485557045, guid: 9e80c0c7f1005504e9c201a6534cfb4a, type: 3}
   goldenApplePrefab: {fileID: 4853229999956769632, guid: 7d5461385753e874292e6d97de192d45, type: 3}
-  knifeAngles: []
-  appleAngles:
-  - 0
-  - 30
-  - 90
-  goldenAppleAngles:
-  - 60
   appleRadius: 1.75
   knifeRadius: 1.4
+  targetSkin: {fileID: 222191743}
+  stageConfig: {fileID: 11400000, guid: 6ba07bdf66f363b42a3ee22727c6a208, type: 2}
 --- !u!114 &684706911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,13 +1616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59b0fa18db2b444e9c536b802c80fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTargetRotatingContinuously: 1
-  isReverve: 0
-  isCounterClockwise: 0
-  initAngularVel: 0
-  rotationSpeed: 2
-  rotationDuration: 0
-  anglDamping: 0
+  targetConfig: {fileID: 11400000, guid: bfa5f12e68b877b41940fef9ca4545c2, type: 2}
   rb2d: {fileID: 684706909}
 --- !u!4 &684706912
 Transform:

@@ -11,22 +11,33 @@ public class SpawnObjects : MonoBehaviour
     [SerializeField] private GameObject applePrefab;
     [SerializeField] private GameObject goldenApplePrefab;
 
-    [Tooltip("The angle is in degrees")]
-    [SerializeField] private List<float> knifeAngles;
-    [Tooltip("The angle is in degrees")]
-    [SerializeField] private List<float> appleAngles;
-    [Tooltip("The angle is in degrees")]
-    [SerializeField] private List<float> goldenAppleAngles;
-
     [SerializeField] private float appleRadius;
     [SerializeField] private float knifeRadius;
+
+    [SerializeField] private SpriteRenderer targetSkin;
+    [SerializeField] private StageConfig stageConfig;
+
+    private List<float> knifeAngles;
+    private List<float> appleAngles;
+    private List<float> goldenAppleAngles;
 
     public float GetKnifeRadius() { return knifeRadius; }
 
     void Start()
     {
+        LoadConfig();
+
         spawnObjects();
         alignObjects();
+    }
+
+    private void LoadConfig()
+    {
+        knifeAngles = stageConfig.spawnKnifeAngles;
+        appleAngles = stageConfig.appleAngles;
+        goldenAppleAngles = stageConfig.goldenAppleAngles;
+
+        targetSkin.sprite = stageConfig.targetSkin;
     }
 
     private float degToRad(float deg)
