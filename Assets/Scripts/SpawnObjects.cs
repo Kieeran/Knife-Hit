@@ -21,7 +21,7 @@ public class SpawnObjects : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     private void LoadConfig(StageConfig config)
@@ -64,7 +64,7 @@ public class SpawnObjects : MonoBehaviour
 
     private float degToRad(float deg)
     {
-        return (float)(deg * (Math.PI / 180f));
+        return deg * (Mathf.PI / 180f);
     }
 
     private void spawnObjects()
@@ -103,8 +103,8 @@ public class SpawnObjects : MonoBehaviour
         }
 
         Vector2 pos = new Vector2(
-            (float)(objectHolder.position.x + tempRadius * Math.Cos(degToRad(angle))),
-            (float)(objectHolder.position.y + tempRadius * Math.Sin(degToRad(angle)))
+            objectHolder.position.x + tempRadius * Mathf.Cos(degToRad(angle)),
+            objectHolder.position.y + tempRadius * Mathf.Sin(degToRad(angle))
         );
 
         obj.transform.position = pos;
@@ -123,13 +123,13 @@ public class SpawnObjects : MonoBehaviour
         float dx = objectHolder.position.x - obj.transform.position.x;
         float dy = objectHolder.position.y - obj.transform.position.y;
 
-        float angleRad = (float)Math.Atan2(dx, -dy);
+        float angleRad = Mathf.Atan2(dx, -dy);
         if (obj.name.Contains("Knife"))
         {
-            angleRad = (float)Math.Atan2(-dx, dy);
+            angleRad = Mathf.Atan2(-dx, dy);
         }
 
-        float angleDeg = (float)(angleRad * (180 / Math.PI));
-        obj.transform.Rotate(0, 0, angleDeg);
+        float angleDeg = angleRad * (180 / Mathf.PI);
+        obj.transform.rotation = Quaternion.Euler(0, 0, angleDeg);
     }
 }
