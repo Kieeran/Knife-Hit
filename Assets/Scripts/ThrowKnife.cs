@@ -14,6 +14,9 @@ public class ThrowKnife : MonoBehaviour
 
     private Vector2 desPoint;
     private GameObject currentKnife;
+    private int currentKnifeAmount = 0;
+
+    public void SetCurrentKnifeAmount(int amount) { currentKnifeAmount = amount; }
     private void Start()
     {
         CreateNewKnife();
