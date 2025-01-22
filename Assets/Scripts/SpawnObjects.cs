@@ -7,7 +7,6 @@ public class SpawnObjects : MonoBehaviour
 {
     [SerializeField] private Transform objectHolder;
 
-    [SerializeField] private GameObject knifePrefab;
     [SerializeField] private GameObject applePrefab;
     [SerializeField] private GameObject goldenApplePrefab;
 
@@ -47,7 +46,15 @@ public class SpawnObjects : MonoBehaviour
 
     private void spawnObjects()
     {
-        this.spawnObject(knifeAngles, knifePrefab);
+        for (int i = 0; i < knifeAngles.Count; i++)
+        {
+            //GameObject obj = Instantiate(prefabObject, objectHolder);
+            GameObject obj = KnifeManager.Instance.GetSpawnKnife();
+            obj.transform.SetParent(objectHolder);
+
+            ArrangeObject(obj, knifeAngles[i]);
+        }
+
         this.spawnObject(appleAngles, applePrefab);
         this.spawnObject(goldenAppleAngles, goldenApplePrefab);
     }

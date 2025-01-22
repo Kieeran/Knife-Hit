@@ -6,16 +6,6 @@ using UnityEngine;
 public class KnifeManager : MonoBehaviour
 {
     public static KnifeManager Instance { get; private set; }
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
 
     private Queue<GameObject> spawnKnives;
     private Queue<GameObject> throwKnives;
@@ -27,8 +17,16 @@ public class KnifeManager : MonoBehaviour
     [SerializeField] private KnifeConfig[] knifeConfigs;
     [SerializeField] private string scriptableObjectsPath;
 
-    private void Start()
+    private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
         amount = 10;
 
         LoadConfigs();
@@ -54,7 +52,7 @@ public class KnifeManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject knife = Instantiate(spawnKnifePrefab, transform);
-            knife.gameObject.SetActive(false);
+            knife.SetActive(false);
             spawnKnives.Enqueue(knife);
         }
     }
@@ -78,6 +76,7 @@ public class KnifeManager : MonoBehaviour
         }
 
         GameObject knife = spawnKnives.Dequeue();
+        knife.gameObject.SetActive(true);
 
         return knife;
     }
@@ -104,7 +103,7 @@ public class KnifeManager : MonoBehaviour
         {
             _knife.SetSprite(knifeConfigs[id].knifeSkin);
         }
-        
+
         return knife;
     }
 }
