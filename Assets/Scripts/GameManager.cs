@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform Holder;
     [SerializeField] private Transform KnifeHolder;
     private LevelData currentLevelData;
+    private int currentLevel;
+    private int stageNumInLevel;
     private int currentAppleCoin;
     private int bestScore;
     private int maxStage;
@@ -27,10 +29,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        currentLevelData = LevelManager.Instance.GetLevelDatas()[0];
+        currentLevel = 1;
+        stageNumInLevel = 1;
 
-        StageConfig stageConfig = currentLevelData.stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count - 2)];
-        TargetConfig targetConfig = currentLevelData.targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count - 2)];
+        currentLevelData = LevelManager.Instance.GetLevelDatas()[currentLevel - 1];
+
+        // StageConfig stageConfig = currentLevelData.stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count - 2)];
+        // TargetConfig targetConfig = currentLevelData.targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count - 2)];
+        StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageConfigs);
+        TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
 
         LoadData(stageConfig, targetConfig);
     }
@@ -44,29 +51,54 @@ public class GameManager : MonoBehaviour
 
     private StageConfig GetRandomStageConfig(List<StageConfig> stageConfigs)
     {
-        return stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count - 2)];
+        return stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count)];
     }
 
     private TargetConfig GetRandomTargetConfig(List<TargetConfig> targetConfigs)
     {
-        return targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count - 2)];
+        return targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count)];
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Debug.Log("Q is being held down");
-            StageConfig stageConfig = currentLevelData.stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count - 2)];
-            TargetConfig targetConfig = currentLevelData.targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count - 2)];
+        // if (Input.GetKeyDown(KeyCode.Q))
+        // {
+        //     Debug.Log("Q is being held down");
+        //     StageConfig stageConfig = currentLevelData.stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count - 2)];
+        //     TargetConfig targetConfig = currentLevelData.targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count - 2)];
 
-            LoadData(stageConfig, targetConfig);
-        }
+        //     LoadData(stageConfig, targetConfig);
+        // }
     }
 
     public void Win()
     {
         Debug.Log("You win!!!");
+        stageNumInLevel++;
+
+        if (stageNumInLevel == 6)
+        {
+            stageNumInLevel = 1;
+            currentLevel++;
+
+            currentLevelData = LevelManager.Instance.GetLevelDatas()[currentLevel - 1];
+        }
+
+        if (stageNumInLevel == 5)
+        {
+            // StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageBossConfigs);
+            StageConfig stageConfig = currentLevelData.stageBossConfigs[0];
+            TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
+
+            LoadData(stageConfig, targetConfig);
+        }
+        else
+        {
+            StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageConfigs);
+            TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
+
+            LoadData(stageConfig, targetConfig);
+        }
     }
 }
