@@ -21,10 +21,7 @@ public class SpawnObjects : MonoBehaviour
 
     void Start()
     {
-        LoadConfig();
-
-        spawnObjects();
-        alignObjects();
+        ResetSpawnObjects();
     }
 
     private void LoadConfig()
@@ -34,6 +31,35 @@ public class SpawnObjects : MonoBehaviour
         goldenAppleAngles = stageConfig.goldenAppleAngles;
 
         targetSkin.sprite = stageConfig.targetSkin;
+    }
+
+    public void ResetSpawnObjects()
+    {
+        if (objectHolder.childCount > 0)
+        {
+            foreach (Transform child in objectHolder)
+            {
+                if (child.name.Contains("Knife"))
+                {
+                    KnifeManager.Instance.ReturnSpawnKnife(child.gameObject);
+                }
+
+                else if (child.name.Contains("Golden"))
+                {
+                    AppleManager.Instance.ReturnGoldenApple(child.gameObject);
+                }
+
+                else
+                {
+                    AppleManager.Instance.ReturnApple(child.gameObject);
+                }
+            }
+        }
+
+        LoadConfig();
+
+        spawnObjects();
+        alignObjects();
     }
 
     private float degToRad(float deg)
