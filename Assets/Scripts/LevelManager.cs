@@ -5,9 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class LevelData
 {
-    public StageConfig[] stageConfigs;
-    public StageConfig[] stageBossConfigs;
-    public TargetConfig[] targetConfigs;
+    public List<StageConfig> stageConfigs = new();
+    public List<StageConfig> stageBossConfigs = new();
+    public List<TargetConfig> targetConfigs = new();
     public int stageCount = 5;
 }
 
@@ -39,26 +39,40 @@ public class LevelManager : MonoBehaviour
 
         string stagePath;
         string targetPath;
-        int i = 1;
+        int index = 1;
         while (true)
         {
-            stagePath = stageDirectoryPath + "/Level_" + i;
-            targetPath = targetDirectoryPath + "/Level_" + i;
+            stagePath = stageDirectoryPath + "/Level_" + index;
+            targetPath = targetDirectoryPath + "/Level_" + index;
 
             StageConfig[] stageConfigs = Resources.LoadAll<StageConfig>(stagePath);
             TargetConfig[] targetConfigs = Resources.LoadAll<TargetConfig>(targetPath);
 
-            if (stageConfigs != null && stageConfigs.Length > 0)
+            if (stageConfigs != null && stageConfigs.Length > 0 && targetConfigs != null && targetConfigs.Length > 0)
             {
-                LevelData levelData = new LevelData
+                LevelData levelData = new();
+
+                for (int i = 0; i < targetConfigs.Length; i++)
                 {
-                    stageConfigs = stageConfigs,
-                    targetConfigs = targetConfigs
-                };
+                    levelData.targetConfigs.Add(targetConfigs[i]);
+                }
+
+                for (int i = 0; i < stageConfigs.Length; i++)
+                {
+                    if (stageConfigs[i].name.Contains("Boss"))
+                    {
+                        levelData.stageBossConfigs.Add(stageConfigs[i]);
+                    }
+
+                    else
+                    {
+                        levelData.stageConfigs.Add(stageConfigs[i]);
+                    }
+                }
 
                 levelDatas.Add(levelData);
 
-                i++;
+                index++;
             }
             else break;
         }
