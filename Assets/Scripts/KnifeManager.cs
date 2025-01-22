@@ -42,9 +42,9 @@ public class KnifeManager : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject spawnKnife = Instantiate(spawnKnifePrefab);
-            spawnKnife.gameObject.SetActive(false);
-            spawnKnives.Enqueue(spawnKnife);
+            GameObject knife = Instantiate(spawnKnifePrefab);
+            knife.gameObject.SetActive(false);
+            spawnKnives.Enqueue(knife);
         }
     }
 
@@ -52,9 +52,27 @@ public class KnifeManager : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject throwKnife = Instantiate(throwKnifePrefab);
-            throwKnife.gameObject.SetActive(false);
-            throwKnives.Enqueue(throwKnife);
+            GameObject knife = Instantiate(throwKnifePrefab);
+            knife.gameObject.SetActive(false);
+            throwKnives.Enqueue(knife);
         }
+    }
+
+    public GameObject GetSpawnKnife()
+    {
+        if (spawnKnives.Count <= 0)
+        {
+            CreateSpawnKnives(amount);
+            Debug.Log("Create more spawn knife");
+        }
+
+        GameObject knife = spawnKnives.Dequeue();
+
+        return knife;
+    }
+
+    public void GetThrowKnifeByID(int id)
+    {
+
     }
 }
