@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Knife : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
+
     private void OnTriggerEnter2D(Collider2D collider2D)
     {
         if (collider2D.gameObject.name.Contains("KnifeSpawn_32"))

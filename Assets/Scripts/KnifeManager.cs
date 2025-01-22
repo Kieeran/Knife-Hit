@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using System.IO;
 
 public class KnifeManager : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class KnifeManager : MonoBehaviour
         Instance = this;
     }
 
+    [SerializeField] private List<KnifeConfig> knifeConfigs = new List<KnifeConfig>();
+
     private Queue<GameObject> spawnKnives;
     private Queue<GameObject> throwKnives;
 
@@ -23,10 +27,30 @@ public class KnifeManager : MonoBehaviour
     [SerializeField] private GameObject throwKnifePrefab;
     private int amount;
 
-    [SerializeField] private List<KnifeConfig> knifeConfigs;
+    private void LoadConfigs()
+    {
+        DirectoryInfo dir = new DirectoryInfo("Assets/Scripts/Scriptable Object/Knife");
+        FileInfo[] files = dir.GetFiles("*.asset*");
+        foreach (FileInfo file in files)
+        {
+            string assetPath = file.FullName.Replace("\\", "/");
+
+            int index = assetPath.IndexOf("Assets/");
+            if (index < 0) continue;
+
+            assetPath = assetPath.Substring(index);
+
+            KnifeConfig config = AssetDatabase.LoadAssetAtPath<KnifeConfig>(assetPath);
+
+            if (config != null) knifeConfigs.Add(config);
+
+            Debug.Log(config);
+        }
+    }
 
     private void Start()
     {
+        LoadConfigs();
         amount = 10;
 
         InitPooling();
@@ -34,6 +58,9 @@ public class KnifeManager : MonoBehaviour
 
     private void InitPooling()
     {
+        spawnKnives = new Queue<GameObject>();
+        throwKnives = new Queue<GameObject>();
+
         CreateSpawnKnives(amount);
         CreateThrowKnives(amount);
     }

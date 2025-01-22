@@ -3171,14 +3171,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510851899}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ba2174e6e8237a45b0d84c514c55369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnKnifePrefab: {fileID: 0}
-  throwKnifePrefab: {fileID: 0}
-  knifeConfigs: []
+  knifeConfigs:
+  - {fileID: 11400000, guid: c0588732e92b0be4da06411c6d3d0e6a, type: 2}
+  spawnKnifePrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
+  throwKnifePrefab: {fileID: 4823279516184705763, guid: 63e2737585572ec4ea0e7021ecc666b1, type: 3}
 --- !u!1 &1562386492
 GameObject:
   m_ObjectHideFlags: 0

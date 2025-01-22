@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b4b2b2b11ee44646936e8a3afb7ba3a, type: 3}
-  m_Name: KnifeConfig 1
+  m_Name: KnifeConfig_9
   m_EditorClassIdentifier: 
-  <knifeID>k__BackingField: 1
-  <knifeSprite>k__BackingField: {fileID: 21300000, guid: ab0c4fcb498aacd46b12b99a8117ab4e, type: 3}
-  <knifeShadowSprite>k__BackingField: {fileID: 21300000, guid: 064368a636ca8ce49ae7e22859df27fe, type: 3}
-  <knifeCost>k__BackingField: 50
+  <knifeID>k__BackingField: 9
+  <knifeSprite>k__BackingField: {fileID: 21300000, guid: 9c0a00130b3a5e94e8b79b7c64938818, type: 3}
+  <knifeShadowSprite>k__BackingField: {fileID: 21300000, guid: 483dd57f8c1feab488ef28072141ee82, type: 3}
+  <knifeCost>k__BackingField: 100
