@@ -79,7 +79,7 @@ public class ThrowKnife : MonoBehaviour
             knife.transform.position = currentKnife.transform.position;
             knife.transform.rotation = currentKnife.transform.rotation;
 
-            Destroy(currentKnife);
+            KnifeManager.Instance.ReturnThrowKnife(currentKnife);
             CreateNewKnife();
             canTouch = true;
 

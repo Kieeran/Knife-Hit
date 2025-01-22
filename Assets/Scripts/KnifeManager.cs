@@ -114,4 +114,13 @@ public class KnifeManager : MonoBehaviour
 
         return knife;
     }
+
+    public void ReturnThrowKnife(GameObject knife)
+    {
+        knife.transform.SetParent(transform);
+        knife.transform.SetLocalPositionAndRotation(Vector2.zero, Quaternion.identity);
+        knife.SetActive(false);
+
+        throwKnives.Enqueue(knife);
+    }
 }
