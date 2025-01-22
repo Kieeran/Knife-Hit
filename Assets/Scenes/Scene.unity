@@ -1620,13 +1620,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59b0fa18db2b444e9c536b802c80fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTargetRotatingContinuously: 0
+  isTargetRotatingContinuously: 1
   isReverve: 0
   isCounterClockwise: 0
-  initAngularVel: 3
-  rotationSpeed: 7
-  rotationDuration: 2
-  anglDamping: 2
+  initAngularVel: 0
+  rotationSpeed: 2
+  rotationDuration: 0
+  anglDamping: 0
   rb2d: {fileID: 684706909}
 --- !u!4 &684706912
 Transform:
