@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using System.IO;
 
 public class KnifeManager : MonoBehaviour
 {
@@ -18,8 +17,6 @@ public class KnifeManager : MonoBehaviour
         Instance = this;
     }
 
-    [SerializeField] private List<KnifeConfig> knifeConfigs = new List<KnifeConfig>();
-
     private Queue<GameObject> spawnKnives;
     private Queue<GameObject> throwKnives;
 
@@ -27,33 +24,20 @@ public class KnifeManager : MonoBehaviour
     [SerializeField] private GameObject throwKnifePrefab;
     private int amount;
 
-    private void LoadConfigs()
-    {
-        DirectoryInfo dir = new DirectoryInfo("Assets/Scripts/Scriptable Object/Knife");
-        FileInfo[] files = dir.GetFiles("*.asset*");
-        foreach (FileInfo file in files)
-        {
-            string assetPath = file.FullName.Replace("\\", "/");
-
-            int index = assetPath.IndexOf("Assets/");
-            if (index < 0) continue;
-
-            assetPath = assetPath.Substring(index);
-
-            KnifeConfig config = AssetDatabase.LoadAssetAtPath<KnifeConfig>(assetPath);
-
-            if (config != null) knifeConfigs.Add(config);
-
-            Debug.Log(config);
-        }
-    }
+    [SerializeField] private KnifeConfig[] knifeConfigs;
+    [SerializeField] private string scriptableObjectsPath;
 
     private void Start()
     {
-        LoadConfigs();
         amount = 10;
 
+        LoadConfigs();
         InitPooling();
+    }
+
+    private void LoadConfigs()
+    {
+        knifeConfigs = Resources.LoadAll<KnifeConfig>(scriptableObjectsPath);
     }
 
     private void InitPooling()
@@ -69,7 +53,7 @@ public class KnifeManager : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject knife = Instantiate(spawnKnifePrefab);
+            GameObject knife = Instantiate(spawnKnifePrefab, transform);
             knife.gameObject.SetActive(false);
             spawnKnives.Enqueue(knife);
         }
@@ -79,7 +63,7 @@ public class KnifeManager : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject knife = Instantiate(throwKnifePrefab);
+            GameObject knife = Instantiate(throwKnifePrefab, transform);
             knife.gameObject.SetActive(false);
             throwKnives.Enqueue(knife);
         }
