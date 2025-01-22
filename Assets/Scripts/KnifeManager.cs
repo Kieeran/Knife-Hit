@@ -15,7 +15,7 @@ public class KnifeManager : MonoBehaviour
     private int amount;
 
     [SerializeField] private KnifeConfig[] knifeConfigs;
-    [SerializeField] private string scriptableObjectsPath;
+    [SerializeField] private string knifeDirectoryPath;
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class KnifeManager : MonoBehaviour
 
     private void LoadConfigs()
     {
-        knifeConfigs = Resources.LoadAll<KnifeConfig>(scriptableObjectsPath);
+        knifeConfigs = Resources.LoadAll<KnifeConfig>(knifeDirectoryPath);
     }
 
     private void InitPooling()

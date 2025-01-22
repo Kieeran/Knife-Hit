@@ -35,7 +35,7 @@ public class ThrowKnife : MonoBehaviour
         desPoint.x = holder.position.x - radius * (ToTarget.x / distanceToTarget);
         desPoint.y = holder.position.y - radius * (ToTarget.y / distanceToTarget);
 
-        Debug.Log(desPoint);
+        //Debug.Log(desPoint);
     }
 
     private void CreateNewKnife()

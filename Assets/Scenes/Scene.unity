@@ -3246,7 +3246,7 @@ MonoBehaviour:
   spawnKnifePrefab: {fileID: 4823279516184705763, guid: 7466053d43e176346b79fa87775c44fb, type: 3}
   throwKnifePrefab: {fileID: 4823279516184705763, guid: 63e2737585572ec4ea0e7021ecc666b1, type: 3}
   knifeConfigs: []
-  scriptableObjectsPath: Scriptable Object/Knife
+  knifeDirectoryPath: Scriptable Object/Knife
 --- !u!1 &1562386492
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,6 +4287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99537501a4372ec4abe5938deb744f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetDirectoryPath: Scriptable Object/Target
+  stageDirectoryPath: Scriptable Object/Stage
 --- !u!1 &1976459329
 GameObject:
   m_ObjectHideFlags: 0
