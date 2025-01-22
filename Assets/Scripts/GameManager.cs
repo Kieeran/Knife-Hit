@@ -32,9 +32,24 @@ public class GameManager : MonoBehaviour
         StageConfig stageConfig = currentLevelData.stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count - 2)];
         TargetConfig targetConfig = currentLevelData.targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count - 2)];
 
+        LoadData(stageConfig, targetConfig);
+    }
+
+    private void LoadData(StageConfig stageConfig, TargetConfig targetConfig)
+    {
         Holder.GetComponent<SpawnObjects>().ResetSpawnObjects(stageConfig);
         Holder.GetComponent<Rotate>().ResetRotate(targetConfig);
         KnifeHolder.GetComponent<ThrowKnife>().SetKnifeAmount(stageConfig.throwKnifeAmount);
+    }
+
+    private StageConfig GetRandomStageConfig(List<StageConfig> stageConfigs)
+    {
+        return stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count - 2)];
+    }
+
+    private TargetConfig GetRandomTargetConfig(List<TargetConfig> targetConfigs)
+    {
+        return targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count - 2)];
     }
 
     // Update is called once per frame
@@ -46,9 +61,7 @@ public class GameManager : MonoBehaviour
             StageConfig stageConfig = currentLevelData.stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count - 2)];
             TargetConfig targetConfig = currentLevelData.targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count - 2)];
 
-            Holder.GetComponent<SpawnObjects>().ResetSpawnObjects(stageConfig);
-            Holder.GetComponent<Rotate>().ResetRotate(targetConfig);
-            KnifeHolder.GetComponent<ThrowKnife>().SetKnifeAmount(stageConfig.throwKnifeAmount);
+            LoadData(stageConfig, targetConfig);
         }
     }
 
