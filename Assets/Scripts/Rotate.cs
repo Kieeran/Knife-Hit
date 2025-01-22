@@ -21,6 +21,11 @@ public class Rotate : MonoBehaviour
 
     private void Start()
     {
+        ResetRotate();
+    }
+
+    public void ResetRotate()
+    {
         LoadConfig();
 
         tempRS = -rotationSpeed;

@@ -66,19 +66,7 @@ public class SpawnObjects : MonoBehaviour
 
             ArrangeObject(obj, goldenAppleAngles[i]);
         }
-
-        // this.spawnObject(appleAngles);
-        // this.spawnObject(goldenAppleAngles);
     }
-
-    // private void spawnObject(List<float> anglesArray)
-    // {
-    //     for (int i = 0; i < anglesArray.Count; i++)
-    //     {
-    //         GameObject obj = Instantiate(prefabObject, objectHolder);
-    //         ArrangeObject(obj, anglesArray[i]);
-    //     }
-    // }
 
     private void ArrangeObject(GameObject obj, float angle)
     {
