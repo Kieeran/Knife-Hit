@@ -1603,7 +1603,7 @@ MonoBehaviour:
   appleRadius: 1.75
   knifeRadius: 1.4
   targetSkin: {fileID: 222191743}
-  stageConfig: {fileID: 11400000, guid: 6ba07bdf66f363b42a3ee22727c6a208, type: 2}
+  stageConfig: {fileID: 11400000, guid: 864410e8525c2294ab2b7d66666f8070, type: 2}
 --- !u!114 &684706911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3171,7 +3171,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510851899}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ba2174e6e8237a45b0d84c514c55369, type: 3}
   m_Name: 

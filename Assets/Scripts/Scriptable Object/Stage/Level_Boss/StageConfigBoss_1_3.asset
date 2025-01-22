@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b17cfde862db3a543b85a67e7e468f24, type: 3}
-  m_Name: StageConfigBoss_1_1
+  m_Name: StageConfigBoss_1_3
   m_EditorClassIdentifier: 
   <throwKnifeAmount>k__BackingField: 7
-  <spawnKnifeAngles>k__BackingField:
-  - 60
-  - 120
+  <spawnKnifeAngles>k__BackingField: []
   <appleAngles>k__BackingField:
-  - 240
+  - 0
+  - 90
+  - 180
   - 270
-  - 300
   <goldenAppleAngles>k__BackingField: []
-  <targetSkin>k__BackingField: {fileID: 21300000, guid: 8a85cc0a3556efe4891a6dc234723aa8, type: 3}
+  <targetSkin>k__BackingField: {fileID: 21300000, guid: 56e24d4cfc446ac408df91559a9e527b, type: 3}
