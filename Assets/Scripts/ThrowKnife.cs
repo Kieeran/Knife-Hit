@@ -7,8 +7,6 @@ using UnityEngine.Events;
 public class ThrowKnife : MonoBehaviour
 {
     [SerializeField] private Transform objectHolder;
-    [SerializeField] private GameObject knifePrefab;
-    [SerializeField] private GameObject knifeSpawnPrefab;
     [SerializeField] private float force;
     [SerializeField] private float touchCoolDown;
     [SerializeField] private Transform holder;
@@ -40,7 +38,9 @@ public class ThrowKnife : MonoBehaviour
 
     private void CreateNewKnife()
     {
-        currentKnife = Instantiate(knifePrefab, transform);
+        currentKnife = KnifeManager.Instance.GetThrowKnifeByID(0);
+        currentKnife.transform.SetParent(transform);
+        currentKnife.transform.localPosition = Vector2.zero;
 
         currentKnife.GetComponent<Collider2D>().enabled = false;
     }
@@ -69,8 +69,8 @@ public class ThrowKnife : MonoBehaviour
             currentKnife.transform.position = desPoint;
             currentKnife.gameObject.SetActive(false);
 
-            GameObject knife = Instantiate(knifeSpawnPrefab, objectHolder);
-
+            GameObject knife = KnifeManager.Instance.GetSpawnKnife();
+            knife.transform.SetParent(objectHolder);
             knife.transform.position = currentKnife.transform.position;
             knife.transform.rotation = currentKnife.transform.rotation;
 

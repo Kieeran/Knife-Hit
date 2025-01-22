@@ -76,6 +76,24 @@ public class LevelManager : MonoBehaviour
             }
             else break;
         }
+
+        // for (int i = 0; i < levelDatas.Count; i++)
+        // {
+        //     for (int j = 0; j < levelDatas[i].stageConfigs.Count; j++)
+        //     {
+        //         Debug.Log(levelDatas[i].stageConfigs[j]);
+        //     }
+
+        //     for (int j = 0; j < levelDatas[i].targetConfigs.Count; j++)
+        //     {
+        //         Debug.Log(levelDatas[i].targetConfigs[j]);
+        //     }
+
+        //     for (int j = 0; j < levelDatas[i].stageBossConfigs.Count; j++)
+        //     {
+        //         Debug.Log(levelDatas[i].stageBossConfigs[j]);
+        //     }
+        // }
     }
 
     // Update is called once per frame

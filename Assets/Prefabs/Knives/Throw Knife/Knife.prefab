@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4261996819744321415}
   - component: {fileID: 8905343833508378138}
   m_Layer: 0
-  m_Name: Knife_32
+  m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

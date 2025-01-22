@@ -96,7 +96,7 @@ public class KnifeManager : MonoBehaviour
 
         GameObject knife = throwKnives.Dequeue();
 
-        knife.gameObject.SetActive(true);
+        knife.SetActive(true);
         Knife _knife;
         if (TryGetComponent<Knife>(out _knife))
         {

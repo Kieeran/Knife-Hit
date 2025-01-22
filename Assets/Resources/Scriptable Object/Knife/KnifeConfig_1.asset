@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: KnifeConfig_1
   m_EditorClassIdentifier: 
   <knifeID>k__BackingField: 1
-  <knifeSprite>k__BackingField: {fileID: 21300000, guid: ab0c4fcb498aacd46b12b99a8117ab4e, type: 3}
+  <knifeSkin>k__BackingField: {fileID: 21300000, guid: ab0c4fcb498aacd46b12b99a8117ab4e, type: 3}
   <knifeShadowSprite>k__BackingField: {fileID: 21300000, guid: 064368a636ca8ce49ae7e22859df27fe, type: 3}
   <knifeCost>k__BackingField: 50
