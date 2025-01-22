@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: AppleConfig
   m_EditorClassIdentifier: 
   <appleID>k__BackingField: 0
+  <appleCoinValue>k__BackingField: 5
   <appleSprite>k__BackingField: {fileID: 21300000, guid: a7e8a1bfb45fbe24284959098d564365, type: 3}

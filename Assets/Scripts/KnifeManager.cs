@@ -28,7 +28,6 @@ public class KnifeManager : MonoBehaviour
         Instance = this;
 
         amount = 10;
-
         LoadConfigs();
         InitPooling();
     }
