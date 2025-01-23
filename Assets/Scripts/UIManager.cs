@@ -31,18 +31,18 @@ public class UIManager : MonoBehaviour
 
         for (int i = 0; i < amount; i++)
         {
-            Instantiate(knifeIconPrefab, knifeAmountBar);
+            GameObject obj = Instantiate(knifeIconPrefab, knifeAmountBar);
+            obj.SetActive(true);
         }
     }
 
     public void RemoveKnife()
     {
-        for (int i = knifeAmountBar.childCount - 1; i >= 0; i--)
+        foreach (Transform child in knifeAmountBar)
         {
-            Transform child = knifeAmountBar.GetChild(i);
+            if (child.gameObject.activeSelf == false) continue;
 
             Image childImage = child.GetComponent<Image>();
-
             if (childImage != null && childImage.color != Color.black)
             {
                 childImage.color = Color.black;

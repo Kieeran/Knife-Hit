@@ -16,7 +16,11 @@ public class ThrowKnife : MonoBehaviour
     private GameObject currentKnife;
     private int knifeAmount = 0;
 
-    public void SetKnifeAmount(int amount) { knifeAmount = amount; }
+    public void SetKnifeAmount(int amount)
+    {
+        knifeAmount = amount;
+        UIManager.Instance.SetupKnifeAmountBar(knifeAmount);
+    }
     private void Start()
     {
         CreateNewKnife();
@@ -84,6 +88,9 @@ public class ThrowKnife : MonoBehaviour
             canTouch = true;
 
             knifeAmount--;
+
+            UIManager.Instance.RemoveKnife();
+
             if (knifeAmount == 0)
             {
                 GameManager.Instance.Win();

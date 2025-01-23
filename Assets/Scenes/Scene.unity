@@ -4499,6 +4499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c48d37263f51c6429c507620cd7397c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knifeAmountBar: {fileID: 1341205843}
+  knifeIconPrefab: {fileID: 2013921947}
 --- !u!4 &2002744926
 Transform:
   m_ObjectHideFlags: 0
