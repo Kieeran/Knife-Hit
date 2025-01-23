@@ -94,6 +94,8 @@ public class ThrowKnife : MonoBehaviour
             knife.transform.position = currentKnife.transform.position;
             knife.transform.rotation = currentKnife.transform.rotation;
 
+            knife.GetComponent<SpriteRenderer>().sprite = KnifeManager.Instance.GetKnifeConfigs()[GameManager.Instance.GetCurrentKnifeID()].knifeSkin;
+
             KnifeManager.Instance.ReturnThrowKnife(currentKnife);
             CreateNewKnife();
             canTouch = true;

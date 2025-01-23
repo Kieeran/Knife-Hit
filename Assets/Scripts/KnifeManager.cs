@@ -88,6 +88,8 @@ public class KnifeManager : MonoBehaviour
         knife.transform.SetLocalPositionAndRotation(Vector2.zero, Quaternion.identity);
         knife.SetActive(false);
 
+        knife.GetComponent<SpriteRenderer>().sprite = knifeConfigs[0].knifeSkin;
+
         spawnKnives.Enqueue(knife);
     }
 
