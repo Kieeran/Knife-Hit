@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
-    [SerializeField] private Transform knifeAmountBar;
     [SerializeField] private Transform gameOverPopUp;
+    [SerializeField] private Transform homeScreen;
+
+    [SerializeField] private Button playGame;
+
+    [SerializeField] private Transform knifeAmountBar;
     [SerializeField] private GameObject knifeIconPrefab;
 
     private void Awake()
@@ -27,6 +31,19 @@ public class UIManager : MonoBehaviour
         {
             GameManager.Instance.RestartGame();
             gameOverPopUp.gameObject.SetActive(false);
+        });
+
+        gameOverPopUp.Find("ReturnHomeButton").GetComponent<Button>().onClick.AddListener(() =>
+        {
+            homeScreen.gameObject.SetActive(true);
+            gameOverPopUp.gameObject.SetActive(false);
+        });
+
+        playGame.onClick.AddListener(() =>
+        {
+            homeScreen.gameObject.SetActive(false);
+
+            GameManager.Instance.RestartGame();
         });
     }
 
