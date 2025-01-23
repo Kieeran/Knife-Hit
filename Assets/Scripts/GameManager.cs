@@ -51,12 +51,12 @@ public class GameManager : MonoBehaviour
 
     private StageConfig GetRandomStageConfig(List<StageConfig> stageConfigs)
     {
-        return stageConfigs[Random.Range(0, currentLevelData.stageConfigs.Count)];
+        return stageConfigs[Random.Range(0, stageConfigs.Count)];
     }
 
     private TargetConfig GetRandomTargetConfig(List<TargetConfig> targetConfigs)
     {
-        return targetConfigs[Random.Range(0, currentLevelData.targetConfigs.Count)];
+        return targetConfigs[Random.Range(0, targetConfigs.Count)];
     }
 
     // Update is called once per frame
@@ -87,8 +87,8 @@ public class GameManager : MonoBehaviour
 
         if (stageNumInLevel == 5)
         {
-            // StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageBossConfigs);
-            StageConfig stageConfig = currentLevelData.stageBossConfigs[0];
+            StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageBossConfigs);
+            //StageConfig stageConfig = currentLevelData.stageBossConfigs[0];
             TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
 
             LoadData(stageConfig, targetConfig);
