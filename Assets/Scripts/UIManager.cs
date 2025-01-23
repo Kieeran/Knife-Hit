@@ -16,11 +16,24 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform knifeAmountBar;
     [SerializeField] private GameObject knifeIconPrefab;
 
+    [SerializeField] private Image currentKnife;
+
     [SerializeField] private TMP_Text appleCoinNumFront;
     [SerializeField] private TMP_Text appleCoinNumBack;
     [SerializeField] private TMP_Text appleCoinNumShop;
 
-    [SerializeField] private Image currentKnife;
+    [SerializeField] private TMP_Text maxStage;
+    [SerializeField] private TMP_Text maxScore;
+
+    public void UpdateMaxScore(int score)
+    {
+        maxScore.text = "SCORE " + score.ToString();
+    }
+
+    public void UpdateMaxStage(int stage)
+    {
+        maxStage.text = "STAGE " + stage.ToString();
+    }
 
     private void Awake()
     {

@@ -103,6 +103,7 @@ public class ThrowKnife : MonoBehaviour
             knifeAmount--;
 
             UIManager.Instance.RemoveKnife();
+            GameManager.Instance.UpdateScore();
 
             if (knifeAmount == 0)
             {

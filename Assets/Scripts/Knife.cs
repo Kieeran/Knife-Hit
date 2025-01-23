@@ -21,6 +21,9 @@ public class Knife : MonoBehaviour
             Destroy(gameObject);
 
             UIManager.Instance.OpenGameOverPopUp();
+
+            GameManager.Instance.CheckMaxScore();
+            GameManager.Instance.CheckMaxStage();
         }
 
         else if (collider2D.gameObject.name.Contains("Apple"))

@@ -5893,7 +5893,7 @@ GameObject:
   - component: {fileID: 1773360694}
   - component: {fileID: 1773360693}
   m_Layer: 5
-  m_Name: CurrentStage
+  m_Name: MaxStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6027,7 +6027,7 @@ GameObject:
   - component: {fileID: 1796752620}
   - component: {fileID: 1796752619}
   m_Layer: 5
-  m_Name: CurrentScore
+  m_Name: MaxScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7421,9 +7421,12 @@ MonoBehaviour:
   playGame: {fileID: 1607759591}
   knifeAmountBar: {fileID: 1341205843}
   knifeIconPrefab: {fileID: 2013921947}
+  currentKnife: {fileID: 1025451942}
   appleCoinNumFront: {fileID: 1199103549}
   appleCoinNumBack: {fileID: 2007115584}
   appleCoinNumShop: {fileID: 1834039608}
+  maxStage: {fileID: 1773360693}
+  maxScore: {fileID: 1796752619}
 --- !u!4 &2002744926
 Transform:
   m_ObjectHideFlags: 0

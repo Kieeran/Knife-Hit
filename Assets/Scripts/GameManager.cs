@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -11,9 +12,12 @@ public class GameManager : MonoBehaviour
     private int currentLevel;
     private int stageNumInLevel;
     private int currentAppleCoin;
-    private int bestScore;
+    private int maxScore;
     private int maxStage;
     private int currentKnifeID;
+
+    private int currentScore = 0;
+    private int currentStage = 1;
 
     private void Awake()
     {
@@ -35,9 +39,24 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ShowAppleCoinUI(currentAppleCoin);
     }
 
+    private void LoadInfo()
+    {
+        maxScore = 0;
+        maxStage = 0;
+        currentAppleCoin = 0;
+        currentKnifeID = 0;
+    }
+
     private void Start()
     {
+        LoadInfo();
+
         RestartGame();
+    }
+
+    public void UpdateScore()
+    {
+        currentScore++;
     }
 
     private void LoadData(StageConfig stageConfig, TargetConfig targetConfig)
@@ -61,6 +80,8 @@ public class GameManager : MonoBehaviour
     {
         currentLevel = 1;
         stageNumInLevel = 1;
+        currentStage = 1;
+        currentScore = 0;
 
         currentLevelData = LevelManager.Instance.GetLevelDatas()[currentLevel - 1];
 
@@ -70,15 +91,37 @@ public class GameManager : MonoBehaviour
         LoadData(stageConfig, targetConfig);
     }
 
+    public void CheckMaxScore()
+    {
+        if (currentScore > maxScore)
+        {
+            maxScore = currentScore;
+            UIManager.Instance.UpdateMaxScore(maxScore);
+        }
+    }
+
+    public void CheckMaxStage()
+    {
+        if (currentStage > maxStage)
+        {
+            maxStage = currentStage;
+            UIManager.Instance.UpdateMaxStage(maxStage);
+        }
+    }
+
     public void Win()
     {
         Debug.Log("You win!!!");
         stageNumInLevel++;
+        currentStage++;
 
         if (currentLevel > LevelManager.Instance.GetLevelDatas().Count)
         {
             Debug.Log("You all win!!!");
             UIManager.Instance.OpenGameOverPopUp();
+
+            CheckMaxScore();
+            CheckMaxStage();
 
             return;
         }
