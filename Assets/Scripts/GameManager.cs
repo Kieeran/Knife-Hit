@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    public void UpdateAppleCoin(int addition)
+    {
+        currentAppleCoin += addition;
+        UIManager.Instance.ShowAppleCoinUI(currentAppleCoin);
+    }
+
     private void Start()
     {
         RestartGame();

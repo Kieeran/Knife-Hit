@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Transform knifeAmountBar;
     [SerializeField] private GameObject knifeIconPrefab;
+
+    [SerializeField] private TMP_Text appleCoinNumFront;
+    [SerializeField] private TMP_Text appleCoinNumBack;
 
     private void Awake()
     {
@@ -45,6 +49,12 @@ public class UIManager : MonoBehaviour
 
             GameManager.Instance.RestartGame();
         });
+    }
+
+    public void ShowAppleCoinUI(int amount)
+    {
+        appleCoinNumFront.text = amount.ToString();
+        appleCoinNumBack.text = amount.ToString();
     }
 
     public void OpenGameOverPopUp()
