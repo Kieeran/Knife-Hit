@@ -436,8 +436,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Holder: {fileID: 684706912}
   KnifeHolder: {fileID: 1831928318}
-  stageConfig1: {fileID: 11400000, guid: dadc008a39c664f4a803da134cc4f58b, type: 2}
-  targetConfig1: {fileID: 11400000, guid: f0eb2fa0861f66e4cac4c6de4b20b204, type: 2}
 --- !u!1 &134089840
 GameObject:
   m_ObjectHideFlags: 0
@@ -3916,7 +3914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1799553561
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4621,6 +4619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knifeAmountBar: {fileID: 1341205843}
+  restartButton: {fileID: 1799553562}
   knifeIconPrefab: {fileID: 2013921947}
 --- !u!4 &2002744926
 Transform:
