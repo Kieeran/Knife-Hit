@@ -39,20 +39,23 @@ public class SpawnObjects : MonoBehaviour
     {
         if (objectHolder.childCount > 0)
         {
-            foreach (Transform child in objectHolder)
+            for (int i = objectHolder.childCount - 1; i >= 0; i--)
             {
+                Transform child = objectHolder.GetChild(i);
+
                 if (child.name.Contains("Knife"))
                 {
+                    Debug.Log("Return Knife");
                     KnifeManager.Instance.ReturnSpawnKnife(child.gameObject);
                 }
-
                 else if (child.name.Contains("Golden"))
                 {
+                    Debug.Log("Return Golden Apple");
                     AppleManager.Instance.ReturnGoldenApple(child.gameObject);
                 }
-
                 else
                 {
+                    Debug.Log("Return Apple");
                     AppleManager.Instance.ReturnApple(child.gameObject);
                 }
             }
