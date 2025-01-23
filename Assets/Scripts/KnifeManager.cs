@@ -37,6 +37,8 @@ public class KnifeManager : MonoBehaviour
         knifeConfigs = Resources.LoadAll<KnifeConfig>(knifeDirectoryPath);
     }
 
+    public KnifeConfig[] GetKnifeConfigs() { return knifeConfigs; }
+
     private void InitPooling()
     {
         spawnKnives = new Queue<GameObject>();
@@ -106,11 +108,7 @@ public class KnifeManager : MonoBehaviour
         GameObject knife = throwKnives.Dequeue();
 
         knife.SetActive(true);
-        Knife _knife;
-        if (TryGetComponent<Knife>(out _knife))
-        {
-            _knife.SetSprite(knifeConfigs[id].knifeSkin);
-        }
+        knife.GetComponent<Knife>().SetSprite(knifeConfigs[id].knifeSkin);
 
         return knife;
     }

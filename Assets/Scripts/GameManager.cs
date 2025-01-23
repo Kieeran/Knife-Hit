@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     }
 
     public int GetCurrentKnifeID() { return currentKnifeID; }
+    public void SetCurrentKnifeID(int id) { currentKnifeID = id; }
 
     public void UpdateAppleCoin(int addition)
     {

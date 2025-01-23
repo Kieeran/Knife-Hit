@@ -108,10 +108,4 @@ public class ThrowKnife : MonoBehaviour
             }
         }
     }
-
-    private IEnumerator TurnOnCanTouch()
-    {
-        yield return new WaitForSeconds(touchCoolDown);
-        canTouch = true;
-    }
 }

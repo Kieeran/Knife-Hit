@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get; private set; }
     [SerializeField] private Transform gameOverPopUp;
     [SerializeField] private Transform homeScreen;
+    [SerializeField] private Transform knifeContainer;
 
     [SerializeField] private Button playGame;
 
@@ -50,6 +51,16 @@ public class UIManager : MonoBehaviour
 
             GameManager.Instance.RestartGame();
         });
+
+        for (int i = 0; i < knifeContainer.childCount; i++)
+        {
+            int currentIndex = i;
+
+            knifeContainer.GetChild(i).GetComponent<Button>().onClick.AddListener(() =>
+            {
+                GameManager.Instance.SetCurrentKnifeID(KnifeManager.Instance.GetKnifeConfigs()[currentIndex].knifeID);
+            });
+        }
     }
 
     public void ShowAppleCoinUI(int amount)
