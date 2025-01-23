@@ -12,13 +12,28 @@ public class Knife : MonoBehaviour
         spriteRenderer.sprite = sprite;
     }
 
-    // private void OnTriggerEnter2D(Collider2D collider2D)
-    // {
-    //     if (collider2D.gameObject.name.Contains("SpawnKnife"))
-    //     {
-    //         Debug.Log("Collide with " + collider2D.gameObject.name + " as trigger");
+    private void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        if (collider2D.gameObject.name.Contains("SpawnKnife"))
+        {
+            Debug.Log("Collide with " + collider2D.gameObject.name);
 
-    //         Destroy(gameObject);
-    //     }
-    // }
+            Destroy(gameObject);
+        }
+
+        else if (collider2D.gameObject.name.Contains("Apple"))
+        {
+            Debug.Log("Collide with " + collider2D.gameObject.name);
+
+            if (collider2D.gameObject.name.Contains("Golden"))
+            {
+                AppleManager.Instance.ReturnGoldenApple(collider2D.gameObject);
+            }
+
+            else
+            {
+                AppleManager.Instance.ReturnApple(collider2D.gameObject);
+            }
+        }
+    }
 }
