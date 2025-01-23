@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17cfde862db3a543b85a67e7e468f24, type: 3}
   m_Name: StageConfig_3_4
   m_EditorClassIdentifier: 
-  <throwKnifeAmount>k__BackingField: 7
+  <throwKnifeAmount>k__BackingField: 8
   <spawnKnifeAngles>k__BackingField:
-  - 45
-  - 315
-  <appleAngles>k__BackingField:
-  - 0
-  <goldenAppleAngles>k__BackingField:
   - 90
-  - 180
+  - 0
   - 270
-  <targetSkin>k__BackingField: {fileID: 21300000, guid: d3b6b0215cb518e4a8f425206400e7e6, type: 3}
+  <appleAngles>k__BackingField: []
+  <goldenAppleAngles>k__BackingField: []
+  <targetSkin>k__BackingField: {fileID: 21300000, guid: 7f253f615973e6a43a777f7c212eb8d7, type: 3}

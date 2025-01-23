@@ -436,6 +436,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Holder: {fileID: 684706912}
   KnifeHolder: {fileID: 1831928318}
+  stageConfig1: {fileID: 11400000, guid: dadc008a39c664f4a803da134cc4f58b, type: 2}
+  targetConfig1: {fileID: 11400000, guid: f0eb2fa0861f66e4cac4c6de4b20b204, type: 2}
 --- !u!1 &134089840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,7 +1670,7 @@ MonoBehaviour:
   appleRadius: 1.75
   knifeRadius: 1.4
   targetSkin: {fileID: 222191743}
-  stageConfig: {fileID: 11400000, guid: 864410e8525c2294ab2b7d66666f8070, type: 2}
+  stageConfig: {fileID: 11400000, guid: 70a1c1636fb1de9498f89a863bdb6529, type: 2}
 --- !u!114 &684706911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,8 +1683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59b0fa18db2b444e9c536b802c80fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetConfig: {fileID: 11400000, guid: bfa5f12e68b877b41940fef9ca4545c2, type: 2}
   rb2d: {fileID: 684706909}
+  targetConfig: {fileID: 11400000, guid: f0eb2fa0861f66e4cac4c6de4b20b204, type: 2}
 --- !u!4 &684706912
 Transform:
   m_ObjectHideFlags: 0

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56baf82fef2cef4a8e31f78858dab04, type: 3}
   m_Name: TargetConfig_1_2
   m_EditorClassIdentifier: 
-  <isTargetRotatingContinuously>k__BackingField: 0
+  <isTargetRotatingContinuously>k__BackingField: 1
   <isReverve>k__BackingField: 0
-  <initAngularVel>k__BackingField: 1
-  <rotationSpeed>k__BackingField: 3
-  <rotationDuration>k__BackingField: 3
-  <anglDamping>k__BackingField: 2
+  <isCounterClockwise>k__BackingField: 0
+  <initAngularVel>k__BackingField: 0
+  <rotationSpeed>k__BackingField: 2
+  <rotationDuration>k__BackingField: 0
+  <anglDamping>k__BackingField: 0

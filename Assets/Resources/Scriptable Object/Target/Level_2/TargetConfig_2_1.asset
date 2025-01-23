@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isTargetRotatingContinuously>k__BackingField: 0
   <isReverve>k__BackingField: 1
-  <isCounterClockwisesReverve>k__BackingField: 0
+  <isCounterClockwise>k__BackingField: 0
   <initAngularVel>k__BackingField: 3
   <rotationSpeed>k__BackingField: 3
   <rotationDuration>k__BackingField: 2
-  <anglDamping>k__BackingField: 1.5
+  <anglDamping>k__BackingField: 2

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17cfde862db3a543b85a67e7e468f24, type: 3}
   m_Name: StageConfigBoss_2_3
   m_EditorClassIdentifier: 
-  <throwKnifeAmount>k__BackingField: 12
+  <throwKnifeAmount>k__BackingField: 14
   <spawnKnifeAngles>k__BackingField: []
   <appleAngles>k__BackingField: []
   <goldenAppleAngles>k__BackingField: []
