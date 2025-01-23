@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
     [SerializeField] private Transform knifeAmountBar;
+    [SerializeField] private Transform restartButton;
     [SerializeField] private GameObject knifeIconPrefab;
     private void Awake()
     {

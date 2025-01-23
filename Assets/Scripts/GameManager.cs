@@ -63,30 +63,35 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         Debug.Log("You win!!!");
-        // stageNumInLevel++;
+        stageNumInLevel++;
 
-        // if (stageNumInLevel == 6)
-        // {
-        //     stageNumInLevel = 1;
-        //     currentLevel++;
+        if (stageNumInLevel > LevelManager.Instance.GetLevelDatas().Count)
+        {
+            Debug.Log("You all win!!!");
+            return;
+        }
 
-        //     currentLevelData = LevelManager.Instance.GetLevelDatas()[currentLevel - 1];
-        // }
+        if (stageNumInLevel == 6)
+        {
+            stageNumInLevel = 1;
+            currentLevel++;
 
-        // if (stageNumInLevel == 5)
-        // {
-        //     StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageBossConfigs);
-        //     //StageConfig stageConfig = currentLevelData.stageBossConfigs[0];
-        //     TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
+            currentLevelData = LevelManager.Instance.GetLevelDatas()[currentLevel - 1];
+        }
 
-        //     LoadData(stageConfig, targetConfig);
-        // }
-        // else
-        // {
-        //     StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageConfigs);
-        //     TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
+        if (stageNumInLevel == 5)
+        {
+            StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageBossConfigs);
+            TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
 
-        //     LoadData(stageConfig, targetConfig);
-        // }
+            LoadData(stageConfig, targetConfig);
+        }
+        else
+        {
+            StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageConfigs);
+            TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
+
+            LoadData(stageConfig, targetConfig);
+        }
     }
 }
