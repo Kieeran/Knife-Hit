@@ -869,7 +869,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709195054}
+      - m_Target: {fileID: 1880970096}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -3424,7 +3424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140.30077, y: -60}
+  m_AnchoredPosition: {x: -140.30078, y: -60}
   m_SizeDelta: {x: 280.61, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504589916
@@ -3864,7 +3864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 97.6, y: -94.799995}
+  m_AnchoredPosition: {x: 97.600006, y: -94.80005}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669943911
@@ -5361,6 +5361,7 @@ MonoBehaviour:
   knifeIconPrefab: {fileID: 2013921947}
   appleCoinNumFront: {fileID: 1199103549}
   appleCoinNumBack: {fileID: 2007115584}
+  appleCoinNumShop: {fileID: 1834039608}
 --- !u!4 &2002744926
 Transform:
   m_ObjectHideFlags: 0

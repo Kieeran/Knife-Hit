@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TMP_Text appleCoinNumFront;
     [SerializeField] private TMP_Text appleCoinNumBack;
+    [SerializeField] private TMP_Text appleCoinNumShop;
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class UIManager : MonoBehaviour
     {
         appleCoinNumFront.text = amount.ToString();
         appleCoinNumBack.text = amount.ToString();
+        appleCoinNumShop.text = amount.ToString();
     }
 
     public void OpenGameOverPopUp()
