@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text appleCoinNumBack;
     [SerializeField] private TMP_Text appleCoinNumShop;
 
+    [SerializeField] private Image currentKnife;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -58,7 +60,11 @@ public class UIManager : MonoBehaviour
 
             knifeContainer.GetChild(i).GetComponent<Button>().onClick.AddListener(() =>
             {
-                GameManager.Instance.SetCurrentKnifeID(KnifeManager.Instance.GetKnifeConfigs()[currentIndex].knifeID);
+                KnifeConfig knifeConfig = KnifeManager.Instance.GetKnifeConfigs()[currentIndex];
+
+                GameManager.Instance.SetCurrentKnifeID(knifeConfig.knifeID);
+
+                currentKnife.sprite = knifeConfig.knifeSkin;
             });
         }
     }
