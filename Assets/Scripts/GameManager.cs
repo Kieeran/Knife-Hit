@@ -26,21 +26,9 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    public StageConfig stageConfig1;
-    public TargetConfig targetConfig1;
-
     private void Start()
     {
-        LoadData(stageConfig1, targetConfig1);
-        // currentLevel = 1;
-        // stageNumInLevel = 1;
-
-        // currentLevelData = LevelManager.Instance.GetLevelDatas()[currentLevel - 1];
-
-        // StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageConfigs);
-        // TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
-
-        // LoadData(stageConfig, targetConfig);
+        RestartGame();
     }
 
     private void LoadData(StageConfig stageConfig, TargetConfig targetConfig)
@@ -60,14 +48,29 @@ public class GameManager : MonoBehaviour
         return targetConfigs[Random.Range(0, targetConfigs.Count)];
     }
 
+    public void RestartGame()
+    {
+        currentLevel = 1;
+        stageNumInLevel = 1;
+
+        currentLevelData = LevelManager.Instance.GetLevelDatas()[currentLevel - 1];
+
+        StageConfig stageConfig = GetRandomStageConfig(currentLevelData.stageConfigs);
+        TargetConfig targetConfig = GetRandomTargetConfig(currentLevelData.targetConfigs);
+
+        LoadData(stageConfig, targetConfig);
+    }
+
     public void Win()
     {
         Debug.Log("You win!!!");
         stageNumInLevel++;
 
-        if (stageNumInLevel > LevelManager.Instance.GetLevelDatas().Count)
+        if (currentLevel > LevelManager.Instance.GetLevelDatas().Count)
         {
             Debug.Log("You all win!!!");
+            UIManager.Instance.OpenGameOverPopUp();
+
             return;
         }
 

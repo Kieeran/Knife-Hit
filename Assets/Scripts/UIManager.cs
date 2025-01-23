@@ -7,8 +7,9 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
     [SerializeField] private Transform knifeAmountBar;
-    [SerializeField] private Transform restartButton;
+    [SerializeField] private Button restartButton;
     [SerializeField] private GameObject knifeIconPrefab;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -20,13 +21,27 @@ public class UIManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        restartButton.onClick.AddListener(() =>
+        {
+            GameManager.Instance.RestartGame();
+            restartButton.gameObject.SetActive(false);
+        });
+    }
+
+    public void OpenGameOverPopUp()
+    {
+        restartButton.gameObject.SetActive(true);
+    }
+
     public void SetupKnifeAmountBar(int amount)
     {
         foreach (Transform child in knifeAmountBar)
         {
             if (child.gameObject.activeSelf == true)
             {
-                Destroy(child);
+                Destroy(child.gameObject);
             }
         }
 
