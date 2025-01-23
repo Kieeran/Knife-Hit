@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
     private int maxStage;
     private int currentKnifeID;
 
+    private string maxScoreKey = "MaxScore";
+    private string maxStageKey = "MaxStage";
+    private string currentAppleCoinKey = "CurrentAppleCoin";
+    private string currentKnifeIDKey = "CurrentKnifeID";
+
     private int currentScore = 0;
     private int currentStage = 1;
 
@@ -39,17 +44,22 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ShowAppleCoinUI(currentAppleCoin);
     }
 
-    private void LoadInfo()
+    public void LoadData()
     {
-        maxScore = 0;
-        maxStage = 0;
-        currentAppleCoin = 0;
-        currentKnifeID = 0;
+        maxScore = PlayerPrefs.GetInt(maxScoreKey);
+        maxStage = PlayerPrefs.GetInt(maxStageKey);
+        currentAppleCoin = PlayerPrefs.GetInt(currentAppleCoinKey);
+        currentKnifeID = PlayerPrefs.GetInt(currentKnifeIDKey);
+
+        UIManager.Instance.UpdateMaxScore(maxScore);
+        UIManager.Instance.UpdateMaxStage(maxStage);
+        UIManager.Instance.ShowAppleCoinUI(currentAppleCoin);
+        UIManager.Instance.SetCurrentKnifeSkin(KnifeManager.Instance.GetKnifeConfigs()[currentKnifeID].knifeSkin);
     }
 
     private void Start()
     {
-        LoadInfo();
+        LoadData();
 
         RestartGame();
     }
@@ -107,6 +117,25 @@ public class GameManager : MonoBehaviour
             maxStage = currentStage;
             UIManager.Instance.UpdateMaxStage(maxStage);
         }
+    }
+
+    public void SaveData()
+    {
+        PlayerPrefs.SetInt(maxScoreKey, maxScore);
+        PlayerPrefs.SetInt(maxStageKey, maxStage);
+        PlayerPrefs.SetInt(currentAppleCoinKey, currentAppleCoin);
+        PlayerPrefs.SetInt(currentKnifeIDKey, currentKnifeID);
+    }
+
+    public void ExitGame()
+    {
+        SaveData();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit(); 
+#endif
     }
 
     public void Win()

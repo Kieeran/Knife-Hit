@@ -77,9 +77,14 @@ public class UIManager : MonoBehaviour
 
                 GameManager.Instance.SetCurrentKnifeID(knifeConfig.knifeID);
 
-                currentKnife.sprite = knifeConfig.knifeSkin;
+                SetCurrentKnifeSkin(knifeConfig.knifeSkin);
             });
         }
+    }
+
+    public void SetCurrentKnifeSkin(Sprite sprite)
+    {
+        currentKnife.sprite = sprite;
     }
 
     public void ShowAppleCoinUI(int amount)
