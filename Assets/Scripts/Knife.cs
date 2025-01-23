@@ -19,6 +19,8 @@ public class Knife : MonoBehaviour
             Debug.Log("Collide with " + collider2D.gameObject.name);
 
             Destroy(gameObject);
+
+            UIManager.Instance.OpenGameOverPopUp();
         }
 
         else if (collider2D.gameObject.name.Contains("Apple"))

@@ -10,7 +10,7 @@ public class ThrowKnife : MonoBehaviour
     [SerializeField] private float force;
     [SerializeField] private float touchCoolDown;
     [SerializeField] private Transform holder;
-    private bool canTouch = true;
+    private bool canTouch;
 
     private Vector2 desPoint;
     private GameObject currentKnife;
@@ -19,13 +19,14 @@ public class ThrowKnife : MonoBehaviour
     public void SetKnifeAmount(int amount)
     {
         knifeAmount = amount;
+
+        ResetThrowKnife();
+
         UIManager.Instance.SetupKnifeAmountBar(knifeAmount);
     }
     private void Start()
     {
-        CreateNewKnife();
-        desPoint = Vector2.zero;
-        FindDesPoint();
+        ResetThrowKnife();
     }
 
     private void FindDesPoint()
@@ -39,8 +40,6 @@ public class ThrowKnife : MonoBehaviour
 
         desPoint.x = holder.position.x - radius * (ToTarget.x / distanceToTarget);
         desPoint.y = holder.position.y - radius * (ToTarget.y / distanceToTarget);
-
-        //Debug.Log(desPoint);
     }
 
     private void CreateNewKnife()
@@ -50,6 +49,18 @@ public class ThrowKnife : MonoBehaviour
         currentKnife.transform.localPosition = Vector2.zero;
 
         currentKnife.GetComponent<Collider2D>().enabled = false;
+    }
+
+    public void ResetThrowKnife()
+    {
+        canTouch = true;
+        if (currentKnife == null)
+        {
+            CreateNewKnife();
+        }
+
+        desPoint = Vector2.zero;
+        FindDesPoint();
     }
 
     private void Update()
