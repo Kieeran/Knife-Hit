@@ -50,6 +50,8 @@ public class AppleManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject apple = Instantiate(applePrefab, transform);
+            apple.GetComponent<Apple>().appleConfig = appleConfigs[0];
+
             apple.SetActive(false);
             apples.Enqueue(apple);
         }
@@ -60,6 +62,8 @@ public class AppleManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject apple = Instantiate(goldenApplePrefab, transform);
+            apple.GetComponent<Apple>().appleConfig = appleConfigs[1];
+
             apple.SetActive(false);
             goldenApples.Enqueue(apple);
         }

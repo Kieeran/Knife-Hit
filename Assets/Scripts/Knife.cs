@@ -36,6 +36,8 @@ public class Knife : MonoBehaviour
             {
                 AppleManager.Instance.ReturnApple(collider2D.gameObject);
             }
+
+            GameManager.Instance.UpdateAppleCoin(collider2D.GetComponent<Apple>().appleConfig.appleCoinValue);
         }
     }
 }
