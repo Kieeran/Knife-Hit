@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb2d;
-    private TargetConfig targetConfig;
+    [SerializeField] private TargetConfig targetConfig;
     private bool isTargetRotatingContinuously;
     private bool isReverve;
     private bool isCounterClockwise;
@@ -48,14 +48,16 @@ public class Rotate : MonoBehaviour
 
     private void LoadConfig(TargetConfig config)
     {
-        isTargetRotatingContinuously = config.isTargetRotatingContinuously;
-        isReverve = config.isReverve;
-        isCounterClockwise = config.isCounterClockwise;
+        targetConfig = config;
 
-        initAngularVel = config.initAngularVel;
-        rotationSpeed = config.rotationSpeed;
-        rotationDuration = config.rotationDuration;
-        anglDamping = config.anglDamping;
+        isTargetRotatingContinuously = targetConfig.isTargetRotatingContinuously;
+        isReverve = targetConfig.isReverve;
+        isCounterClockwise = targetConfig.isCounterClockwise;
+
+        initAngularVel = targetConfig.initAngularVel;
+        rotationSpeed = targetConfig.rotationSpeed;
+        rotationDuration = targetConfig.rotationDuration;
+        anglDamping = targetConfig.anglDamping;
     }
 
     private void Update()

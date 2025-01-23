@@ -11,7 +11,7 @@ public class SpawnObjects : MonoBehaviour
     [SerializeField] private float knifeRadius;
 
     [SerializeField] private SpriteRenderer targetSkin;
-    private StageConfig stageConfig;
+    [SerializeField] private StageConfig stageConfig;
 
     private List<float> knifeAngles;
     private List<float> appleAngles;
@@ -26,11 +26,13 @@ public class SpawnObjects : MonoBehaviour
 
     private void LoadConfig(StageConfig config)
     {
-        knifeAngles = config.spawnKnifeAngles;
-        appleAngles = config.appleAngles;
-        goldenAppleAngles = config.goldenAppleAngles;
+        stageConfig = config;
 
-        targetSkin.sprite = config.targetSkin;
+        knifeAngles = stageConfig.spawnKnifeAngles;
+        appleAngles = stageConfig.appleAngles;
+        goldenAppleAngles = stageConfig.goldenAppleAngles;
+
+        targetSkin.sprite = stageConfig.targetSkin;
     }
 
     public void ResetSpawnObjects(StageConfig config)
