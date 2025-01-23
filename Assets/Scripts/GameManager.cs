@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private int currentAppleCoin;
     private int bestScore;
     private int maxStage;
-    private int equippedKnifeID;
+    private int currentKnifeID;
 
     private void Awake()
     {
@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
     }
+
+    public int GetCurrentKnifeID() { return currentKnifeID; }
 
     public void UpdateAppleCoin(int addition)
     {

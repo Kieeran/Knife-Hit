@@ -44,7 +44,7 @@ public class ThrowKnife : MonoBehaviour
 
     private void CreateNewKnife()
     {
-        currentKnife = KnifeManager.Instance.GetThrowKnifeByID(0);
+        currentKnife = KnifeManager.Instance.GetThrowKnifeByID(GameManager.Instance.GetCurrentKnifeID());
         currentKnife.transform.SetParent(transform);
         currentKnife.transform.localPosition = Vector2.zero;
 
